@@ -6,7 +6,7 @@
 - App Store URL: https://apps.apple.com/us/app/habit-tracker-goals-habon/id6828774437
 - Website: https://habon-app.pages.dev (update if the Cloudflare URL differs)
 - Icon: `public/icon-512.png` · Social image: `public/og-default.png` · Screenshots: official App Store set
-- **Honesty rules:** no ratings, reviews, download counts or "#1" claims. Mention it is new (released Nov 2026). Free tier = 2 habits + 1 routine; requires iOS 27+.
+- **Honesty rules:** no ratings, reviews, download counts or "#1" claims. Mention it is new (released Nov 2026). Free tier = 2 habits + 1 routine; requires iOS 18+.
 
 ## Taglines
 - Short (60): *A calm habit tracker and daily routine planner for iPhone*

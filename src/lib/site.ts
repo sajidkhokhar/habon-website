@@ -8,7 +8,7 @@ export const SITE = {
   developerName: 'Sajid A Khokhar',
   developerUrl: 'https://apps.apple.com/us/developer/sajid-a-khokhar/id6780629199',
   appPrivacyUrl: 'https://sajidkhokhar.github.io/sajidkhokharapps/habittracker/privacy-policy.html',
-  minIos: '27.0',
+  minIos: '18.0',
   released: '2026-11-24',
   repoUrl: 'https://github.com/sajidkhokhar/habon-website',
   cfToken: (import.meta.env.PUBLIC_CF_BEACON_TOKEN as string) || '',

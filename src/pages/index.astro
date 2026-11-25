@@ -9,7 +9,7 @@ import { getCollection } from 'astro:content';
 const faq = [
   { q: 'Is Habon free?', a: 'Yes. Habon is free to download and free to use with 2 active habits and 1 routine, every goal type, streaks, history, achievements and unlimited reminders. Premium is optional and unlocks unlimited habits and routines, year analytics, all nine themes and all relaxing sounds.' },
   { q: 'Does Habon need an account?', a: 'No. Your habits and history stay on your device, and Habon works without signing up.' },
-  { q: 'Which devices does Habon run on?', a: 'Habon is a universal app for iPhone and iPad with an Apple Watch app. The current version requires iOS 27.0 or later.' },
+  { q: 'Which devices does Habon run on?', a: 'Habon is a universal app for iPhone and iPad with an Apple Watch app. The current version requires iOS 18.0 or later.' },
   { q: 'Are the free online tools on this site connected to the app?', a: 'No. The web tools store data in your own browser with localStorage and are separate from the app. Nothing is uploaded and no sign-up is needed.' },
 ];
 const posts = (await getCollection('blog')).sort((a, b) => b.data.published.getTime() - a.data.published.getTime()).slice(0, 3);
@@ -27,7 +27,7 @@ const featured = ['online-habit-tracker', 'printable-habit-tracker', 'daily-rout
           <AppStoreButton placement="hero" height={54} />
           <a href="/online-habit-tracker/" class="btn">Try the free web tracker</a>
         </div>
-        <p class="mt-4 text-sm text-muted">Free to download · No account · Requires iOS 27 or later</p>
+        <p class="mt-4 text-sm text-muted">Free to download · No account · Requires iOS 18 or later</p>
       </div>
       <div class="relative mx-auto w-full max-w-sm md:max-w-none">
         <div class="relative mx-auto w-64 sm:w-72 floaty">

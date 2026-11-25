@@ -88,7 +88,7 @@ scripts/lh.sh http://localhost:4321 mobile   # Lighthouse (needs CHROME_PATH)
 ## Content and accuracy rules
 
 - Facts about Habon come from its App Store listing. Do not add ratings, reviews, download counts or features that are not there.
-- The app currently requires iOS 27.0 or later.
+- The app currently requires iOS 18.0 or later.
 - Research claims in articles are limited to well-documented findings and phrased with their limits.
 
 ## Credits
