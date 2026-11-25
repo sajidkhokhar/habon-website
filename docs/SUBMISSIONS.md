@@ -42,3 +42,16 @@ Hi {name}, I read your post on {post}. I built a free tool that makes weekly or 
 ## Status (updated 2026-11-25)
 - **AlternativeTo:** submitted 2026-11-25, in the review queue (no paid priority). Alternatives suggested: Streaks, Habitify, Loop Habit Tracker. Track under My submissions.
 - **Product Hunt:** launch scheduled for 2026-11-26 (12:01am PT). Edit or reschedule under My launches. Be present to answer comments; do not ask for upvotes.
+
+## SaaSHub kit (submit yourself — their page asks AI agents not to submit)
+Submit at https://www.saashub.com/services/submit (needs a free account). Heads-up: their rules reject products on free subdomains (e.g. *.vercel.com), so `habon-app.pages.dev` may be refused. A custom domain would fix that and would also allow "verified" status (an email on the product domain). Listing the App Store page as the website is another option to try, but it may not count as a product website.
+
+- **Name:** Habon
+- **Website URL:** https://habon-app.pages.dev/ (alternative: https://apps.apple.com/us/app/habit-tracker-goals-habon/id6828774437)
+- **Tagline:** A calm habit tracker and daily routine planner for iPhone, iPad and Apple Watch
+- **Description:** Habon is a habit tracker and daily routine planner for iPhone, iPad and Apple Watch. Track Yes/No, Count and Duration goals, set Limit goals for habits you want to cut back, and keep streaks that only count the days a habit is due. Group habits into morning, afternoon and evening routines and see week, month and year analytics. Data stays on your device and there is no account. The free plan includes 2 habits and 1 routine; Premium is optional. The website also offers free habit tools that run in your browser (online tracker, printable PDF trackers, 30-day challenge).
+- **Categories:** Habit Tracker, Productivity, Health & Fitness (use whichever exist on SaaSHub).
+- **Competitors to list:** Streaks, Habitify, Loop Habit Tracker.
+- **Pricing:** Freemium. **Platforms:** iOS, iPadOS, watchOS (requires iOS 18+, watchOS 10+).
+- **Logo:** `public/icon-512.png` · **Screenshots:** `src/assets/shots/` (today, streaks, routines, insights).
+- Honesty: no ratings, reviews, download counts or "#1" claims; it is a new app (Nov 2026).
