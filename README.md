@@ -2,7 +2,7 @@
 
 The marketing site and free habit tools for **[Habon: Habit Tracker & Goals](https://apps.apple.com/us/app/habit-tracker-goals-habon/id6828774437)**, an iPhone, iPad and Apple Watch habit tracker.
 
-- **Live site:** https://habon-app.pages.dev (Cloudflare Pages)
+- **Live site:** https://habon-app.pages.dev (Cloudflare Pages, auto-deploys from `main`; `habon.pages.dev` was already taken)
 - **App Store ID:** `6828774437` · Developer: Sajid A Khokhar
 - **Stack:** [Astro](https://astro.build) (static output) · Tailwind CSS v4 · TypeScript · jsPDF · localStorage. No backend, database or paid service.
 
@@ -44,7 +44,7 @@ Copy `.env.example` to `.env` (or set variables in Cloudflare Pages → Settings
 | Variable | Purpose |
 |---|---|
 | `SITE_URL` | Canonical origin used for sitemap, canonicals and JSON-LD (default `https://habon-app.pages.dev`). Also update the `Sitemap:` line in `public/robots.txt` if you change it. |
-| `PUBLIC_CF_BEACON_TOKEN` | Cloudflare Web Analytics token (cookieless). Optional. |
+| `PUBLIC_CF_BEACON_TOKEN` | Only needed if you add the Cloudflare Web Analytics snippet manually. On Pages, enabling Web Analytics in the project's Metrics tab injects the beacon automatically, so leave this empty. |
 | `PUBLIC_GA_ID` | Google Analytics 4 measurement ID. Optional. When set, a consent banner appears and GA only loads after the visitor accepts. |
 
 Custom events (when GA is enabled and consented): `app_store_click` (with `placement`), `tool_use`, `pdf_download`, `pdf_print`, `habit_created`, `goal_created`, `challenge_selected`, `habit_idea_added`, `routine_sent_to_planner`.
