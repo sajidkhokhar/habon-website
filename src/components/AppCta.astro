@@ -1,0 +1,23 @@
+---
+import AppStoreButton from './AppStoreButton.astro';
+import Shot from './Shot.astro';
+import { shots } from '../lib/shots';
+interface Props { placement: string; title?: string; text?: string; shot?: keyof typeof shots }
+const { placement, title = 'Prefer it on your iPhone?', text = 'Habon is a free habit tracker for iPhone and Apple Watch with streaks that follow your schedule, reminders and honest insights. Your data stays on your device.', shot = 'today' } = Astro.props;
+---
+<aside class="app-cta no-print my-12 overflow-hidden rounded-3xl border border-line bg-soft" aria-label="About the Habon app">
+  <div class="grid items-center gap-6 p-6 sm:p-8 md:grid-cols-[1fr_auto]">
+    <div>
+      <p class="eyebrow">Habon for iPhone</p>
+      <h2 class="mt-2 text-2xl font-bold sm:text-3xl">{title}</h2>
+      <p class="mt-3 max-w-xl text-muted">{text}</p>
+      <div class="mt-5 flex flex-wrap items-center gap-4">
+        <AppStoreButton placement={placement} />
+        <span class="text-sm text-muted">Free · iPhone, iPad and Apple Watch · iOS 27+</span>
+      </div>
+    </div>
+    <div class="relative hidden h-44 w-40 overflow-hidden md:block" aria-hidden="true">
+      <Shot name={shot} width={160} class="absolute left-0 top-0 w-40 rounded-2xl border border-line shadow-xl" />
+    </div>
+  </div>
+</aside>

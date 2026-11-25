@@ -1,0 +1,31 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'What is the difference between this and the online habit tracker?', a: 'This is a simple one-page grid for the current week with no streak engine, built for planning and printing. The online habit tracker is the fuller tool with categories, colors, streaks and charts. They store data separately.' },
+  { q: 'Does the week start on Monday?', a: 'Yes, Monday through Sunday here. If you prefer Sunday, use the printable generator where you can choose.' },
+  { q: 'Can I print a blank copy?', a: 'Yes. The button creates a printable PDF of the week with your habits and empty boxes.' },
+];
+---
+<PageLayout
+  title="Weekly Habit Planner: Free Online 7-Day Habit Grid | Habon"
+  description="A free weekly habit planner. Add the habits you want to hit this week, tick them off across seven days, move between weeks and print a blank PDF."
+  h1="Weekly habit planner"
+  eyebrow="Free tool · Printable"
+  lead="A seven-day grid for the few habits that matter this week. Tick them off, flip to other weeks and print a copy for your desk."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Weekly habit planner', href: '/weekly-habit-planner/' }]}
+  tool={{ name: 'Habon weekly habit planner' }}
+  related={['monthly-habit-calendar', 'online-habit-tracker', 'printable-habit-tracker']}
+  faq={faq} wide ctaShot="today"
+>
+  <div slot="tool" class="tool-shell"><div id="grid-root" data-mode="week"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>Why plan habits by the week</h2>
+  <p>A week is long enough to show a pattern and short enough to fix one. Most people can look at seven days of check-ins and see immediately which habit keeps slipping and which day it slips on. That makes the weekly planner a good companion to a daily check-in, and a good place to start if a monthly view feels overwhelming. Compare the two in <a href="/blog/weekly-vs-monthly-habit-tracking/">weekly vs monthly habit tracking</a>.</p>
+  <h2>A five-minute Sunday review</h2>
+  <ol>
+    <li>Look at the grid. Which habit has the most gaps?</li>
+    <li>Ask what got in the way: time, energy, forgetting or the habit itself.</li>
+    <li>Shrink or move that habit instead of promising to try harder.</li>
+    <li>Add or remove at most one habit for the new week.</li>
+  </ol>
+</PageLayout>
+<script>import '../scripts/grid';</script>

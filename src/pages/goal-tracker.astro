@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Shot from '../components/Shot.astro';
+const faq = [
+  { q: 'What is a goal tracker?', a: 'A goal tracker records progress toward an outcome, usually through milestones or measurable numbers, so you can see how far you are and what is next.' },
+  { q: 'Goal tracker or habit tracker?', a: 'Use a goal tracker for the outcome and a habit tracker for the daily actions that produce it. They work best together.' },
+];
+---
+<PageLayout
+  title="Goal Tracker: Set, Track & Reach Goals with Habits | Habon"
+  description="How to track goals so they get done: outcome vs process goals, milestones, weekly actions and the habit link. Free goal planner and Habon's goal types."
+  h1="Goal tracker"
+  eyebrow="Outcomes need processes"
+  lead="Goals tell you where you are heading. Habits are how you get there. Tracking both is what moves a goal from wish to plan."
+  crumbs={[{ name: 'Goal tracker', href: '/goal-tracker/' }]}
+  faq={faq} related={['goal-planner', 'online-habit-tracker', '30-day-habit-challenge']} ctaShot="goals" ctaTitle="Track goals the way they are measured"
+>
+  <h2>Outcome goals and process goals</h2>
+  <p>An <strong>outcome goal</strong> is a result: run a 5K, read 12 books, save $1,000. A <strong>process goal</strong> is an action you control: run three mornings a week, read 20 pages a day, move $25 every Friday. Outcomes motivate, processes deliver. Track the outcome with milestones in the <a href="/goal-planner/">goal planner</a>, and the process in a <a href="/online-habit-tracker/">habit tracker</a>.</p>
+  <h2>Pick the right measure</h2>
+  <ul>
+    <li><strong>Yes/No:</strong> did you do it? (Take medication, journal.)</li>
+    <li><strong>Count:</strong> how many? (8 glasses of water, 20 pages.)</li>
+    <li><strong>Duration:</strong> how long? (30 minutes of reading.)</li>
+    <li><strong>Limit:</strong> stay under a number. (No more than 2 coffees.)</li>
+  </ul>
+  <p>These are the four goal types in Habon, so each habit is measured the way it really works.</p>
+  <figure class="not-prose my-8 flex flex-wrap items-center gap-6"><Shot name="goals" width={240} class="w-[240px] rounded-3xl border border-line" /><figcaption class="max-w-sm text-sm text-muted">Habon's goal setup supports Yes/No, Count and Duration goals, with Limit goals for quitting.</figcaption></figure>
+  <h2>A simple weekly loop</h2>
+  <ol><li>Review milestones: which are done, which is next.</li><li>Pick two or three actions for the week.</li><li>Track them daily.</li><li>Adjust on Sunday.</li></ol>
+  <p>More detail in <a href="/blog/how-to-track-daily-goals/">how to track daily goals</a>.</p>
+</PageLayout>

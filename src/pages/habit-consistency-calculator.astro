@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'What is a good habit consistency rate?', a: 'There is no official threshold. Many people treat roughly 80% as strong and sustainable, and 90% or more as very consistent. Context matters: a hard habit at 60% can be a real success.' },
+  { q: 'How is consistency calculated?', a: 'Days done divided by days planned. The tool also converts it to an average number of days per week.' },
+  { q: 'What does "perfect days in a row" mean?', a: 'It is how many consecutive days you would need to complete, starting now, to lift your overall rate to 80% or 90%.' },
+];
+---
+<PageLayout
+  title="Habit Consistency Calculator: Completion Rate & Targets | Habon"
+  description="Enter days planned and days done to get your habit consistency percentage, average days per week and how many perfect days it takes to reach 80% or 90%."
+  h1="Habit consistency calculator"
+  eyebrow="Free tool"
+  lead="Turn days planned and days done into a consistency score, an average per week and a realistic next target."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Habit consistency calculator', href: '/habit-consistency-calculator/' }]}
+  tool={{ name: 'Habon habit consistency calculator' }}
+  related={['habit-streak-calculator', 'online-habit-tracker', 'monthly-habit-calendar']}
+  faq={faq} ctaShot="insights"
+>
+  <div slot="tool" class="tool-shell"><div id="consistency-root"></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>Consistency vs streaks</h2>
+  <p>A streak rewards perfection and punishes a single slip. Consistency measures the whole picture. Two people can both have a 10-day current streak while one has completed 95% of the last 90 days and the other 40%. Looking at both gives a truer read, which is why Habon shows completion rates next to streaks.</p>
+  <h2>How to improve a low score</h2>
+  <ol>
+    <li>Shrink the habit until you can do it on a bad day.</li>
+    <li>Move it to a more reliable time.</li>
+    <li>Cut the number of habits you are tracking.</li>
+    <li>Track the pattern with the <a href="/habit-streak-calculator/">streak calculator</a> to find your weak weekday.</li>
+  </ol>
+  <p>See <a href="/blog/how-to-stay-consistent-with-habits/">how to stay consistent with habits</a> for the full approach.</p>
+</PageLayout>
+<script>import '../scripts/consistency';</script>

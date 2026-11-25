@@ -1,0 +1,30 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'How does it choose steps?', a: 'It selects from common wind-down steps, favors your chosen focus and schedules them backward from your target bedtime, so the last step ends when you want to be in bed.' },
+  { q: 'Is there evidence that evening routines help sleep?', a: 'Consistent bedtimes and a calm wind-down are widely recommended sleep hygiene advice. Individual needs vary, and a routine is not a treatment for a sleep disorder.' },
+  { q: 'Can I print it?', a: 'Send it to the routine planner and use the printable schedule button there.' },
+];
+---
+<PageLayout
+  title="Evening Routine Generator: Build a Timed Wind-Down Routine | Habon"
+  description="Enter your bedtime, minutes available and focus, then get a free timed evening routine that works backward from bed. Edit and print it in the planner."
+  h1="Evening routine generator"
+  eyebrow="Free tool"
+  lead="Pick your bedtime and how long you have. The routine is scheduled backward so you finish right when you want to be in bed."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Evening routine generator', href: '/evening-routine-generator/' }]}
+  tool={{ name: 'Habon evening routine generator' }}
+  related={['morning-routine-generator', 'daily-routine-planner', 'habit-consistency-calculator']}
+  faq={faq} ctaShot="calm" ctaTitle="Wind down with Habon"
+  ctaText="Habon includes relaxing sounds and calm full-screen scenes for meditation habits, and a gentle evening check-in. Free includes 2 sounds and the Aurora scene."
+>
+  <div slot="tool" class="tool-shell"><div id="routinegen-root" data-kind="evening"></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>What a good evening routine does</h2>
+  <ul>
+    <li><strong>Closes the day.</strong> A quick note of tomorrow's top tasks gets them out of your head.</li>
+    <li><strong>Sets up the morning.</strong> Clothes, bag and water ready means one less decision.</li>
+    <li><strong>Lowers the lights, literally.</strong> Dimmer light and fewer screens signal the end of the day.</li>
+  </ul>
+  <p>Full guide: <a href="/blog/how-to-build-an-evening-routine/">how to build an evening routine</a>. For the morning counterpart, use the <a href="/morning-routine-generator/">morning routine generator</a>.</p>
+</PageLayout>
+<script>import '../scripts/routine-gen';</script>

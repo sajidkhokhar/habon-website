@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AppStoreButton from '../components/AppStoreButton.astro';
+import Shot from '../components/Shot.astro';
+import Faq from '../components/Faq.astro';
+import { TOOLS, toolHref } from '../lib/site';
+import { getCollection } from 'astro:content';
+
+const faq = [
+  { q: 'Is Habon free?', a: 'Yes. Habon is free to download and free to use with 2 active habits and 1 routine, every goal type, streaks, history, achievements and unlimited reminders. Premium is optional and unlocks unlimited habits and routines, year analytics, all nine themes and all relaxing sounds.' },
+  { q: 'Does Habon need an account?', a: 'No. Your habits and history stay on your device, and Habon works without signing up.' },
+  { q: 'Which devices does Habon run on?', a: 'Habon is a universal app for iPhone and iPad with an Apple Watch app. The current version requires iOS 27.0 or later.' },
+  { q: 'Are the free online tools on this site connected to the app?', a: 'No. The web tools store data in your own browser with localStorage and are separate from the app. Nothing is uploaded and no sign-up is needed.' },
+];
+const posts = (await getCollection('blog')).sort((a, b) => b.data.published.getTime() - a.data.published.getTime()).slice(0, 3);
+const featured = ['online-habit-tracker', 'printable-habit-tracker', 'daily-routine-planner', '30-day-habit-challenge', 'habit-streak-calculator', 'goal-planner'].map((s) => TOOLS.find((t) => t.slug === s)!);
+---
+<BaseLayout home title="Habon: Habit Tracker & Daily Routine Planner for iPhone" description="Habon is a calm habit tracker and daily routine planner for iPhone and Apple Watch: schedule-aware streaks, honest insights, no account. Plus free web habit tools." faq={faq}>
+  <section class="relative overflow-hidden">
+    <div class="sun pointer-events-none absolute -right-40 -top-40 size-[34rem] rounded-full opacity-90 dark:opacity-70" aria-hidden="true"></div>
+    <div class="wrap relative grid items-center gap-12 pb-20 pt-14 md:grid-cols-[1.1fr_.9fr] md:pt-20">
+      <div>
+        <p class="eyebrow rise">Habit tracker for iPhone and Apple Watch</p>
+        <h1 class="rise rise-2 mt-4 text-5xl font-extrabold leading-[1] sm:text-6xl lg:text-7xl">Build habits,<br /><span class="text-accent-ink">one tap a day.</span></h1>
+        <p class="rise rise-3 mt-6 max-w-xl text-lg text-muted sm:text-xl">Habon is a calm habit tracker and daily routine planner. Today is one glance and one tap, and every streak, chart and insight comes from your real records.</p>
+        <div class="rise rise-3 mt-8 flex flex-wrap items-center gap-5">
+          <AppStoreButton placement="hero" height={54} />
+          <a href="/online-habit-tracker/" class="btn">Try the free web tracker</a>
+        </div>
+        <p class="mt-4 text-sm text-muted">Free to download · No account · Requires iOS 27 or later</p>
+      </div>
+      <div class="relative mx-auto w-full max-w-sm md:max-w-none">
+        <div class="relative mx-auto w-64 sm:w-72 floaty">
+          <Shot name="today" width={288} eager sizes="(min-width:640px) 288px, 256px" class="w-full rounded-[2rem] border border-line shadow-2xl" />
+        </div>
+        <div class="absolute -bottom-6 -left-2 hidden w-40 rotate-[-6deg] sm:block lg:-left-10 lg:w-44">
+          <Shot name="streaks" width={176} class="w-full rounded-[1.4rem] border border-line shadow-xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-soft py-20">
+    <div class="wrap">
+      <p class="eyebrow">What Habon does</p>
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">Honest tracking that follows how you actually live.</h2>
+      <div class="mt-12 grid gap-x-10 gap-y-12 md:grid-cols-3">
+        <div><h3 class="text-xl font-bold">Goals that fit the habit</h3><p class="mt-2 text-muted">Yes/No, Count and Duration goals, plus Limit goals for the habits you want to cut back. Daily, specific weekdays or every few days.</p></div>
+        <div><h3 class="text-xl font-bold">Streaks that follow your schedule</h3><p class="mt-2 text-muted">Streaks only count the days a habit is due. Skip a day, pause a habit or fix a past day without losing the plot.</p></div>
+        <div><h3 class="text-xl font-bold">Insights from real records</h3><p class="mt-2 text-muted">Week, month and year analytics with completion rates, and insights that appear only when your data supports them.</p></div>
+        <div><h3 class="text-xl font-bold">Routines for the whole day</h3><p class="mt-2 text-muted">Group habits into a morning, afternoon or evening flow, with reminders that have Mark done and Add one right in the notification.</p></div>
+        <div><h3 class="text-xl font-bold">Apple Watch and Apple Health</h3><p class="mt-2 text-muted">A watch app with a watch-face complication, and read-only Apple Health steps, exercise and workouts next to your habits.</p></div>
+        <div><h3 class="text-xl font-bold">Private by design</h3><p class="mt-2 text-muted">Your habits and history stay on your device. No account is needed, and habit names and notes are never sent anywhere.</p></div>
+      </div>
+      <a href="/features/" class="btn mt-12">See all features →</a>
+    </div>
+  </section>
+
+  <section class="wrap py-20">
+    <div class="grid gap-10 md:grid-cols-[.8fr_1.2fr] md:items-end">
+      <div>
+        <p class="eyebrow">Free, in your browser</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Free habit tools. No sign-up, no server.</h2>
+      </div>
+      <p class="text-lg text-muted">A working habit tracker, printable PDF trackers, a routine planner and more. Everything saves in your own browser, so your data stays with you.</p>
+    </div>
+    <ul class="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      {featured.map((t) => (
+        <li class="bg-bg"><a href={toolHref(t.slug)} class="group flex h-full flex-col p-6 transition-colors hover:bg-soft"><span class="font-display text-xl font-bold group-hover:underline">{t.name}</span><span class="mt-2 text-sm text-muted">{t.blurb}</span><span class="mt-4 text-sm font-semibold text-accent-ink">Open tool →</span></a></li>
+      ))}
+    </ul>
+    <p class="mt-6"><a href="/tools/" class="font-semibold underline underline-offset-4">All {TOOLS.length} free tools</a></p>
+  </section>
+
+  <section class="border-y border-line bg-ink py-20 text-white">
+    <div class="wrap">
+      <p class="text-sm font-bold uppercase tracking-[.12em] text-accent">A look inside</p>
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">Calm on the surface, detailed underneath.</h2>
+      <div class="-mx-5 mt-10 flex snap-x gap-5 overflow-x-auto px-5 pb-4" tabindex="0" aria-label="Habon app screenshots">
+        {(['today', 'streaks', 'routines', 'insights', 'goals', 'quit', 'achievements', 'calm', 'watch'] as const).map((n) => (
+          <Shot name={n} width={260} sizes="260px" class="w-[260px] flex-none snap-start rounded-[1.6rem] border border-white/10" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap py-20">
+    <div class="flex items-end justify-between gap-4"><h2 class="text-3xl font-bold sm:text-4xl">From the blog</h2><a href="/blog/" class="font-semibold underline underline-offset-4">All articles</a></div>
+    <ul class="mt-8 grid gap-8 md:grid-cols-3">
+      {posts.map((p) => (
+        <li><a href={`/blog/${p.id}/`} class="group block border-t-2 border-fg pt-4"><p class="text-sm text-muted">{p.data.published.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p><h3 class="mt-2 text-xl font-bold group-hover:underline">{p.data.title}</h3><p class="mt-2 text-muted">{p.data.description}</p></a></li>
+      ))}
+    </ul>
+  </section>
+
+  <div class="wrap-narrow pb-4"><Faq items={faq} /></div>
+
+  <section class="wrap pb-6">
+    <div class="rounded-3xl bg-ink p-8 text-white sm:p-14">
+      <h2 class="max-w-xl text-3xl font-bold sm:text-5xl">Start with one habit. Make it easy to repeat.</h2>
+      <div class="mt-8 flex flex-wrap items-center gap-5"><AppStoreButton placement="home-final" height={54} /><span class="text-sm text-white/70">Free · iPhone, iPad and Apple Watch</span></div>
+    </div>
+  </section>
+</BaseLayout>

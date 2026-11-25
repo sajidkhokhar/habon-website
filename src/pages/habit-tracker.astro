@@ -1,0 +1,47 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Shot from '../components/Shot.astro';
+const faq = [
+  { q: 'What is a habit tracker?', a: 'A habit tracker is a simple record of whether you did a behavior on a given day, shown as checkmarks, streaks or charts. Seeing the record makes the habit visible and gives you something to improve on.' },
+  { q: 'Do habit trackers work?', a: 'Tracking works as a prompt and a feedback loop: it reminds you to act and shows whether you did. It is not magic, and the habit still has to be small enough to repeat. Research on self-monitoring generally links it with better follow-through on goals, but results vary between people.' },
+  { q: 'How many habits should I track?', a: 'Start with one to three. Add more only after those feel automatic or at least routine.' },
+  { q: 'Should I use an app, a website or paper?', a: 'Whichever you will open every day. Apps are best for reminders, paper for visibility, and a website for trying things out.' },
+];
+---
+<PageLayout
+  title="Habit Tracker: What It Is, How It Works & How to Choose One | Habon"
+  description="A plain guide to habit trackers: what they are, the types (app, online, printable), what to track, and how to pick one you will keep using. With free tools."
+  h1="Habit tracker: a practical guide"
+  eyebrow="Start here"
+  lead="A habit tracker is a daily record of what you did. This guide explains how trackers work, which type suits you and how to avoid the common reasons people quit."
+  crumbs={[{ name: 'Habit tracker', href: '/habit-tracker/' }]}
+  faq={faq} related={['online-habit-tracker', 'printable-habit-tracker', 'habit-streak-calculator', 'habit-ideas-generator']} ctaShot="today"
+>
+  <h2>How a habit tracker works</h2>
+  <p>You pick a small action, decide what counts as done, and mark each day. Over time the marks form a pattern: streaks, gaps, strong weekdays, weak weeks. That pattern does two jobs. It nudges you to act, and it gives you honest data when you adjust the plan.</p>
+  <h2>Three kinds of habit tracker</h2>
+  <table>
+    <thead><tr><th>Type</th><th>Best for</th><th>Watch out for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>App</strong></td><td>Reminders, streaks, charts, Apple Watch</td><td>Free limits, notification fatigue</td></tr>
+      <tr><td><strong>Online</strong></td><td>Trying habits with no install</td><td>No reminders, data lives in one browser</td></tr>
+      <tr><td><strong>Printable</strong></td><td>Visibility on a desk or fridge</td><td>Easy to lose, no automatic stats</td></tr>
+    </tbody>
+  </table>
+  <p>You can mix them. Many people print a weekly sheet for the fridge and use an app for reminders. Try the <a href="/online-habit-tracker/">free online habit tracker</a> or <a href="/printable-habit-tracker/">make a printable PDF</a>.</p>
+  <h2>What to track</h2>
+  <ul>
+    <li><strong>Actions, not outcomes.</strong> Track "walk 20 minutes", not "lose weight".</li>
+    <li><strong>One clear definition of done.</strong> Yes/No, a count (8 glasses) or a duration (30 minutes).</li>
+    <li><strong>Habits you want to cut back</strong> work too, as a limit: "No more than 2 coffees".</li>
+  </ul>
+  <p>Need ideas? Browse the <a href="/habit-ideas-generator/">habit ideas generator</a> or read <a href="/blog/50-daily-habit-ideas/">50 daily habit ideas</a>.</p>
+  <h2>Why people stop tracking, and the fix</h2>
+  <ol>
+    <li><strong>Too many habits.</strong> Cut to three.</li>
+    <li><strong>The streak broke and the motivation went with it.</strong> Watch completion percentage, not just the streak. See the <a href="/habit-consistency-calculator/">consistency calculator</a>.</li>
+    <li><strong>Tracking is a chore.</strong> It should take one tap. That is the design idea behind Habon's Today screen.</li>
+  </ol>
+  <figure class="not-prose my-8 flex flex-wrap items-center gap-6"><Shot name="today" width={220} class="w-[220px] rounded-3xl border border-line" /><figcaption class="max-w-sm text-sm text-muted">Habon's Today screen: one glance, one tap per habit, a progress ring and your streak.</figcaption></figure>
+  <p>Read the deeper method in <a href="/blog/how-to-track-habits-effectively/">how to track habits effectively</a>, and compare formats in <a href="/blog/habit-tracker-vs-to-do-list/">habit tracker vs to-do list</a>.</p>
+</PageLayout>

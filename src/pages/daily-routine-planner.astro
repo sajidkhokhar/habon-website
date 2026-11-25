@@ -1,0 +1,33 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'Can I reorder tasks?', a: 'Yes. Drag the ⠿ handle to reorder or to move a task into another part of the day. If you cannot drag, use the up and down arrows, or press Sort by time.' },
+  { q: 'Does it remind me at the set times?', a: 'No. The web planner cannot send notifications. Habon on iPhone and Apple Watch can send reminders for each habit and group habits into routines.' },
+  { q: 'Is my routine saved?', a: 'It saves automatically in this browser. Use Uncheck all each morning to reset the ticks and keep the routine.' },
+  { q: 'Can I print it?', a: 'Yes. Download the PDF schedule in US Letter or A4, or press Print.' },
+];
+---
+<PageLayout
+  title="Daily Routine Planner: Free Morning-to-Evening Schedule | Habon"
+  description="Build your daily routine online. Add timed morning, afternoon and evening tasks, drag to reorder, tick them off and print a free PDF schedule. No sign-up."
+  h1="Daily routine planner"
+  eyebrow="Free tool · Drag and drop · Printable"
+  lead="Lay out your day in three parts, give each task a time, reorder with a drag and print a clean routine schedule."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Daily routine planner', href: '/daily-routine-planner/' }]}
+  tool={{ name: 'Habon daily routine planner' }}
+  related={['morning-routine-generator', 'evening-routine-generator', 'printable-habit-tracker', 'weekly-habit-planner']}
+  faq={faq} wide ctaShot="routines" ctaTitle="Routines that live on your phone"
+  ctaText="In Habon, a routine groups your habits into a morning, afternoon or evening flow, with a progress ring for each. Free includes 1 routine; Premium unlocks unlimited."
+>
+  <div slot="tool" class="tool-shell"><div id="routine-root"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>How to plan a routine that holds up</h2>
+  <ol>
+    <li><strong>Start with anchors.</strong> Wake time, lunch and bedtime already exist. Build around them.</li>
+    <li><strong>Keep it short.</strong> Three to five tasks per part of the day is plenty. You can always add more later.</li>
+    <li><strong>Order by friction.</strong> Put easy wins first so the routine builds momentum.</li>
+    <li><strong>Give tasks a time, not a window.</strong> "7:15 stretch" is easier to act on than "sometime in the morning".</li>
+    <li><strong>Review after a week.</strong> Delete what you skipped, shrink what felt heavy.</li>
+  </ol>
+  <p>Stuck for ideas? The <a href="/morning-routine-generator/">morning routine generator</a> and <a href="/evening-routine-generator/">evening routine generator</a> build a timed starting point you can send straight here. For the thinking behind it, read <a href="/blog/how-to-build-a-morning-routine/">how to build a morning routine</a> and <a href="/blog/how-to-build-an-evening-routine/">how to build an evening routine</a>.</p>
+</PageLayout>
+<script>import '../scripts/routine';</script>

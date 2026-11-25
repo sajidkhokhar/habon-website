@@ -1,0 +1,43 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import AppStoreButton from '../components/AppStoreButton.astro';
+import Shot from '../components/Shot.astro';
+const faq = [
+  { q: 'What iOS version does Habon need?', a: 'The current version requires iOS 27.0 or later and works on iPhone and iPad, with an Apple Watch app.' },
+  { q: 'Does Habon have an Apple Watch app?', a: 'Yes, with a watch-face complication.' },
+  { q: 'Does it use Apple Health?', a: 'Optionally and read-only: steps, exercise minutes, active energy, distance and workouts can appear next to your habits. Habon never writes to Health.' },
+  { q: 'Do I need an account?', a: 'No. Habits and history stay on your device.' },
+  { q: 'Is it available in Spanish?', a: 'Yes, English and Spanish (Mexico).' },
+];
+---
+<PageLayout
+  title="Habit Tracker for iPhone & Apple Watch (Free) | Habon"
+  description="Habon is a free habit tracker for iPhone and Apple Watch. Yes/No, count and duration goals, schedule-aware streaks, reminders, routines and private on-device data."
+  h1="Habit tracker for iPhone"
+  eyebrow="Habon on the App Store"
+  lead="Habon is a calm habit tracker for iPhone, iPad and Apple Watch. Today is one glance and one tap, and every streak and chart comes from your real records."
+  crumbs={[{ name: 'Habit tracker for iPhone', href: '/habit-tracker-for-iphone/' }]}
+  faq={faq} related={['online-habit-tracker', 'daily-routine-planner']} cta={false}
+>
+  <div class="not-prose -mt-2 mb-8 flex flex-wrap items-center gap-5"><AppStoreButton placement="iphone-page-top" height={54} /><span class="text-sm text-muted">Free · iPhone, iPad, Apple Watch · iOS 27+</span></div>
+  <h2>What to look for in an iPhone habit tracker</h2>
+  <ul>
+    <li><strong>A fast daily check-in.</strong> If logging takes more than a few seconds, you will stop.</li>
+    <li><strong>Reminders you can act on.</strong> Habon's notifications have Mark done and Add one built in.</li>
+    <li><strong>Flexible goals.</strong> Yes/No, Count and Duration, plus Limit goals for cutting back.</li>
+    <li><strong>Honest streaks.</strong> Streaks should follow your schedule, so a rest day is not a failure.</li>
+    <li><strong>Privacy.</strong> Habits and history stay on your device with no account.</li>
+    <li><strong>Apple Watch and Health.</strong> Check habits from your wrist and see activity beside them.</li>
+  </ul>
+  <h2>How Habon covers it</h2>
+  <div class="not-prose my-8 grid gap-8 sm:grid-cols-3">
+    <figure><Shot name="today" width={260} class="w-full rounded-3xl border border-line" /><figcaption class="mt-2 text-sm text-muted">Today: ring, streak and one-tap habits.</figcaption></figure>
+    <figure><Shot name="goals" width={260} class="w-full rounded-3xl border border-line" /><figcaption class="mt-2 text-sm text-muted">Goal types for every kind of habit.</figcaption></figure>
+    <figure><Shot name="watch" width={260} class="w-full rounded-3xl border border-line" /><figcaption class="mt-2 text-sm text-muted">Apple Watch app and complication.</figcaption></figure>
+  </div>
+  <p>Streaks only count the days a habit is due. You can skip a day, pause a habit or fix a past day, and routines group habits into a morning, afternoon or evening flow. Week, month and year analytics show completion rates, and insights appear only when your data supports them. See everything on the <a href="/features/">features page</a>.</p>
+  <h2>Free and Premium</h2>
+  <p>Free includes 2 active habits and 1 routine with every goal type, streaks, history, achievements and unlimited reminders. Premium unlocks unlimited habits and routines, year analytics and all themes, sounds and scenes. Details on the <a href="/free-habit-tracker/">free habit tracker page</a>.</p>
+  <div class="not-prose my-10 rounded-3xl border border-line bg-soft p-6"><p class="font-display text-2xl font-bold">Try it on your iPhone</p><div class="mt-4"><AppStoreButton placement="iphone-page-bottom" /></div></div>
+  <p>Not ready to install? Start in your browser with the <a href="/online-habit-tracker/">online habit tracker</a>. If you are comparing apps, <a href="/blog/best-habit-tracker-apps-for-iphone/">our guide to choosing a habit tracker for iPhone</a> explains what matters.</p>
+</PageLayout>

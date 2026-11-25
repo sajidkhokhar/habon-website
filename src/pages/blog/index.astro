@@ -1,0 +1,21 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort((a, b) => b.data.published.getTime() - a.data.published.getTime());
+---
+<PageLayout
+  title="Habit Tracking Blog: Guides on Habits, Routines & Goals | Habon"
+  description="Practical guides on tracking habits, building morning and evening routines, 30-day challenges, streaks and staying consistent, with free tools and templates."
+  h1="The Habon blog"
+  eyebrow="Habits, routines and goals"
+  lead="Practical, no-hype guides. Each one links to a free tool you can use straight away."
+  crumbs={[{ name: 'Blog', href: '/blog/' }]}
+  ctaShot="today"
+>
+  <ul class="not-prose divide-y divide-line border-y border-line">
+    {posts.map((p) => (
+      <li><a href={`/blog/${p.id}/`} class="group block py-6"><p class="text-sm text-muted">{p.data.published.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p><h2 class="mt-1 font-display text-2xl font-bold group-hover:underline">{p.data.title}</h2><p class="mt-2 text-muted">{p.data.description}</p></a></li>
+    ))}
+  </ul>
+  <p class="mt-6"><a href="/rss.xml">Subscribe via RSS</a></p>
+</PageLayout>

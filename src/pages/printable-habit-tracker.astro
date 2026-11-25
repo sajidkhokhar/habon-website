@@ -1,0 +1,43 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrintableApp from '../components/PrintableApp.astro';
+const faq = [
+  { q: 'Is the printable habit tracker free?', a: 'Yes. Make as many PDFs as you like. Nothing is uploaded: the PDF is built in your browser.' },
+  { q: 'Which paper sizes are supported?', a: 'US Letter (8.5 x 11 in) and A4 (210 x 297 mm). Weekly trackers print in portrait and monthly trackers in landscape.' },
+  { q: 'Can I edit the habit names?', a: 'Yes. Type one habit per line and the preview updates. Leave rows empty if you prefer to write habits by hand.' },
+  { q: 'Why does the PDF only show basic characters?', a: 'PDF generation here uses the standard built-in fonts, so accented letters are simplified and emoji are left out.' },
+];
+---
+<PageLayout
+  title="Printable Habit Tracker: Free Weekly & Monthly PDF Generator | Habon"
+  description="Make a free printable habit tracker in seconds. Pick weekly or monthly, add your habits and colors, choose A4 or US Letter, then download a PDF or print."
+  h1="Printable habit tracker generator"
+  eyebrow="Free tool · PDF · A4 and US Letter"
+  lead="Build a weekly or monthly habit tracker with your own habits, color and layout. Download the PDF or print it straight away."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Printable habit tracker', href: '/printable-habit-tracker/' }]}
+  tool={{ name: 'Habon printable habit tracker generator' }}
+  related={['30-day-habit-challenge', 'daily-routine-planner', 'online-habit-tracker', 'weekly-habit-planner']}
+  faq={faq}
+  ctaShot="streaks"
+  ctaTitle="Paper today, phone tomorrow"
+  ctaText="A printed tracker is great for a fridge or desk. When you want streaks, reminders and charts without the pen, Habon keeps score on your iPhone and Apple Watch."
+>
+  <PrintableApp slot="tool" />
+  <h2>Weekly or monthly: which should you print?</h2>
+  <p>A <strong>weekly tracker</strong> gives you big, easy boxes and room for notes, which suits two to six habits you want to review every Sunday. A <strong>monthly tracker</strong> packs up to a month of check-ins on one landscape page, which suits long streaks and spotting patterns. If you cannot decide, read <a href="/blog/weekly-vs-monthly-habit-tracking/">weekly vs monthly habit tracking</a>.</p>
+  <h2>The four layouts</h2>
+  <ul>
+    <li><strong>Grid</strong>: ruled cells, the classic look and easiest to read from a distance.</li>
+    <li><strong>Minimal</strong>: light lines and small squares, good for a planner or journal insert.</li>
+    <li><strong>Bold header</strong>: a color band and tinted rows, good on a wall or fridge.</li>
+    <li><strong>Dots</strong>: soft dots to fill in, a calm look for bullet-journal fans.</li>
+  </ul>
+  <h2>Tips for a tracker you will actually use</h2>
+  <ol>
+    <li>Print on regular paper first and keep a pen next to the page.</li>
+    <li>Track three to five habits, not fifteen. Extra rows are there if you need them, not a target.</li>
+    <li>Fill it in at the same time each day, right after the habit if you can.</li>
+    <li>Mark a missed day with a dash, not a guilt trip, and aim never to miss twice in a row.</li>
+  </ol>
+  <p>Want ready-made files instead? See the <a href="/habit-tracker-pdf/">habit tracker PDF downloads</a> or browse <a href="/habit-tracker-templates/">habit tracker templates</a>.</p>
+</PageLayout>

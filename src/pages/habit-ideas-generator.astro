@@ -1,0 +1,29 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'How do I pick a habit from the list?', a: 'Choose one that takes under five minutes, happens at a predictable time and matters to you. Start with one, not five.' },
+  { q: 'What does the Add button do?', a: 'It adds the idea as a daily habit in the free online habit tracker in this browser. You can edit the name, color and schedule there.' },
+];
+---
+<PageLayout
+  title="Habit Ideas Generator: Random Daily Habit Ideas by Category | Habon"
+  description="Shuffle small, specific habit ideas for health, fitness, mind, learning, productivity, home, money and sleep. Add any idea to a free online habit tracker."
+  h1="Habit ideas generator"
+  eyebrow="Free tool"
+  lead="Not sure what to track? Shuffle through small, specific ideas and add the ones you like straight to your tracker."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Habit ideas generator', href: '/habit-ideas-generator/' }]}
+  tool={{ name: 'Habon habit ideas generator' }}
+  related={['online-habit-tracker', '30-day-habit-challenge', 'morning-routine-generator']}
+  faq={faq} ctaShot="goals"
+>
+  <div slot="tool" class="tool-shell"><div id="ideas-root"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>What makes a good habit idea</h2>
+  <ul>
+    <li><strong>Specific.</strong> "Read 10 pages" can be checked. "Read more" cannot.</li>
+    <li><strong>Small.</strong> If it takes under five minutes, you can do it on your worst day.</li>
+    <li><strong>Tied to a cue.</strong> After breakfast, before bed, when you sit at your desk.</li>
+    <li><strong>Yours.</strong> Pick something you actually want, not what a list says you should.</li>
+  </ul>
+  <p>Want a bigger menu? See <a href="/blog/50-daily-habit-ideas/">50 daily habit ideas</a>, and read <a href="/blog/how-to-build-better-habits/">how to build better habits</a> before you add more than one or two.</p>
+</PageLayout>
+<script>import '../scripts/ideas';</script>

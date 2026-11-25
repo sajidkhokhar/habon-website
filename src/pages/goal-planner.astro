@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'How is goal progress measured?', a: 'By the share of milestones you have ticked off. Break each goal into three to five checkpoints so the percentage means something.' },
+  { q: 'What is the difference between a goal and a habit?', a: 'A goal is an outcome you want, like running a 5K. A habit is a repeatable action that gets you there, like running three mornings a week. Use this planner for the goal and a habit tracker for the daily actions.' },
+  { q: 'Is my data private?', a: 'Yes. Goals are saved only in your browser and never uploaded.' },
+];
+---
+<PageLayout
+  title="Goal Planner: Free Online Goal Tracker with Milestones | Habon"
+  description="Turn a goal into milestones and weekly actions. Free online goal planner with progress rings, target dates and nothing to sign up for."
+  h1="Goal planner"
+  eyebrow="Free tool · No sign-up"
+  lead="Write the goal, set a date, split it into milestones and decide this week's actions. Progress builds as you tick checkpoints off."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Goal planner', href: '/goal-planner/' }]}
+  tool={{ name: 'Habon goal planner' }}
+  related={['online-habit-tracker', '30-day-habit-challenge', 'weekly-habit-planner']}
+  faq={faq} wide ctaShot="goals" ctaTitle="Goals that fit the way you count"
+  ctaText="Habon supports Yes/No, Count and Duration goals, plus Limit goals for habits you want to cut back, so each habit is measured the way it should be."
+>
+  <div slot="tool" class="tool-shell"><div id="goals-root"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>A simple way to write a goal</h2>
+  <ol>
+    <li><strong>State the result and the date.</strong> "Run 5 km without stopping by March 1" is clear. "Get fit" is not.</li>
+    <li><strong>Write the why.</strong> It is what you will reread when motivation dips.</li>
+    <li><strong>Add three to five milestones.</strong> For the 5K: run 10 minutes, run 20 minutes, run 3 km, run 5 km.</li>
+    <li><strong>Choose this week's actions.</strong> Two or three, not ten.</li>
+    <li><strong>Pair it with a habit.</strong> Track the daily action, like "Run 3 times a week", in the <a href="/online-habit-tracker/">habit tracker</a>.</li>
+  </ol>
+  <p>Learn how daily goals connect to bigger ones in <a href="/blog/how-to-track-daily-goals/">how to track daily goals</a>.</p>
+</PageLayout>
+<script>import '../scripts/goals';</script>

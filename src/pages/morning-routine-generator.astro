@@ -1,0 +1,30 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'How does the generator build a routine?', a: 'It picks from a library of common morning steps, favors the focus you choose, fits them into the minutes you have and lays them out as times from your wake-up. Run it again for a different mix.' },
+  { q: 'How long should a morning routine be?', a: 'As long as you can repeat on a normal weekday. Many people start with 15 to 30 minutes of extras on top of getting ready.' },
+  { q: 'Can I edit the result?', a: 'Send it to the routine planner, where you can edit, reorder, tick off and print it.' },
+];
+---
+<PageLayout
+  title="Morning Routine Generator: Build a Timed Morning Routine | Habon"
+  description="Enter your wake time, minutes available and focus, then get a free timed morning routine. Send it to the routine planner to edit and print."
+  h1="Morning routine generator"
+  eyebrow="Free tool"
+  lead="Tell it when you wake up, how long you have and what you want from the morning. Get a timed routine you can edit."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Morning routine generator', href: '/morning-routine-generator/' }]}
+  tool={{ name: 'Habon morning routine generator' }}
+  related={['evening-routine-generator', 'daily-routine-planner', 'habit-ideas-generator']}
+  faq={faq} ctaShot="routines"
+>
+  <div slot="tool" class="tool-shell"><div id="routinegen-root" data-kind="morning"></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>Principles behind a morning routine that sticks</h2>
+  <ul>
+    <li><strong>Start smaller than you think.</strong> Three steps you repeat beat ten you abandon.</li>
+    <li><strong>Protect the first 30 minutes.</strong> Water, light and movement before notifications.</li>
+    <li><strong>Prepare the night before.</strong> A good morning starts with the <a href="/evening-routine-generator/">evening routine</a>.</li>
+    <li><strong>Keep a fallback.</strong> Decide the two-minute version for rough mornings.</li>
+  </ul>
+  <p>Read the full guide: <a href="/blog/how-to-build-a-morning-routine/">how to build a morning routine</a>.</p>
+</PageLayout>
+<script>import '../scripts/routine-gen';</script>

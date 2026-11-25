@@ -1,0 +1,41 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TemplatePreview from '../components/TemplatePreview.astro';
+const faq = [
+  { q: 'Where can I get a free habit tracker template?', a: 'Right here: the printable generator builds weekly and monthly templates, and the hub has ready-made PDFs. You can also use the 30-day challenge sheet and the daily routine schedule.' },
+  { q: 'Do you offer Google Sheets or Excel templates?', a: 'Not currently. The templates here are PDFs and interactive web tools. If a spreadsheet matters to you, the online tracker\'s JSON export is a starting point.' },
+  { q: 'Which template is best for beginners?', a: 'The weekly template with three habits. It is small enough to finish and gives a fast weekly review.' },
+];
+---
+<PageLayout
+  title="Habit Tracker Templates: Weekly, Monthly & 30-Day | Habon"
+  description="Free habit tracker templates you can customize and print: weekly, monthly, 30-day challenge and daily routine layouts. Pick the right one and make it in seconds."
+  h1="Habit tracker templates"
+  eyebrow="Free · Customizable · Printable"
+  lead="Four template types cover almost every habit tracking need. Here is when to use each, and how to make one in seconds."
+  crumbs={[{ name: 'Habit tracker templates', href: '/habit-tracker-templates/' }]}
+  faq={faq} related={['printable-habit-tracker', '30-day-habit-challenge', 'daily-routine-planner', 'weekly-habit-planner']} ctaShot="routines"
+>
+  <div slot="tool" class="grid grid-cols-2 gap-5 sm:grid-cols-4">
+    <figure><TemplatePreview kind="weekly" style="grid" label="Weekly habit tracker template preview" /><figcaption class="mt-2 text-sm font-semibold">Weekly</figcaption></figure>
+    <figure><TemplatePreview kind="monthly" style="dots" label="Monthly habit tracker template preview" /><figcaption class="mt-2 text-sm font-semibold">Monthly</figcaption></figure>
+    <figure><TemplatePreview kind="challenge" style="bold" label="30-day challenge template preview" /><figcaption class="mt-2 text-sm font-semibold">30-day challenge</figcaption></figure>
+    <figure><TemplatePreview kind="routine" style="minimal" label="Daily routine template preview" /><figcaption class="mt-2 text-sm font-semibold">Daily routine</figcaption></figure>
+  </div>
+  <h2>Which template should you use?</h2>
+  <h3>Weekly habit tracker</h3>
+  <p>Big boxes, room for notes and a built-in weekly review. Best for two to six habits and for beginners. <a href="/printable-habit-tracker/">Make a weekly tracker</a>.</p>
+  <h3>Monthly habit tracker</h3>
+  <p>A landscape grid of every day in the month. Best for seeing long-run patterns and keeping a streak chain. <a href="/printable-habit-tracker/">Make a monthly tracker</a>.</p>
+  <h3>30-day challenge sheet</h3>
+  <p>Thirty numbered circles for one habit, plus reward and reflection lines. Best for a focused sprint. <a href="/30-day-habit-challenge/">Start a challenge</a>.</p>
+  <h3>Daily routine schedule</h3>
+  <p>Morning, afternoon and evening blocks with times and tick boxes. Best for structuring a day. <a href="/daily-routine-planner/">Build a routine</a>.</p>
+  <h2>Customize before you print</h2>
+  <ul>
+    <li>Type your own habit names, or leave rows blank to write by hand.</li>
+    <li>Choose US Letter or A4.</li>
+    <li>Pick Grid, Minimal, Bold header or Dots, and one of eight colors.</li>
+  </ul>
+  <p>Prefer one click? Use the <a href="/habit-tracker-pdf/">habit tracker PDF downloads</a>.</p>
+</PageLayout>

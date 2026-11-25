@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+  --font-display: "Bricolage Grotesque Variable", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-bg: var(--bg);
+  --color-soft: var(--soft);
+  --color-raised: var(--raised);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-ink: #1c1c1e;
+}
+
+:root {
+  color-scheme: light;
+  --bg: #fbf9f5;
+  --soft: #f3efe7;
+  --raised: #ffffff;
+  --fg: #1c1c1e;
+  --muted: #5f5f66;
+  --line: #e4ded2;
+  --accent: #f9a93a;
+  --accent-ink: #8a4f00;
+  --ok: #1f8a52;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141415;
+  --soft: #1c1c1e;
+  --raised: #232326;
+  --fg: #f4f2ee;
+  --muted: #a6a6ad;
+  --line: #333337;
+  --accent: #f9a93a;
+  --accent-ink: #ffc572;
+  --ok: #4cc58a;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, ::before, ::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+::selection { background: var(--accent); color: #1c1c1e; }
+
+.wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
+.wrap-narrow { width: min(46rem, 100% - 2.5rem); margin-inline: auto; }
+
+@layer components {
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 2.75rem; padding: .6rem 1.1rem; border-radius: .75rem; font-weight: 600; font-size: .95rem; border: 1px solid var(--line); background: var(--raised); color: var(--fg); cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+  .btn:hover { border-color: var(--fg); }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--accent); color: #1c1c1e; border-color: var(--accent); }
+  .btn-primary:hover { background: #ffb852; border-color: #ffb852; }
+  .btn-sm { min-height: 2.25rem; padding: .35rem .75rem; font-size: .85rem; border-radius: .6rem; }
+  .btn-danger:hover { border-color: #d64545; color: #d64545; }
+  .field { width: 100%; min-height: 2.75rem; padding: .55rem .8rem; border-radius: .7rem; border: 1px solid var(--line); background: var(--raised); color: var(--fg); font: inherit; }
+  .field:focus { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 0; }
+  .label { display: block; font-size: .8rem; font-weight: 600; color: var(--muted); margin-bottom: .3rem; letter-spacing: .01em; }
+  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+  .chip { display: inline-flex; align-items: center; gap: .4rem; padding: .25rem .7rem; border-radius: 999px; border: 1px solid var(--line); font-size: .85rem; background: var(--raised); }
+  .tool-shell { border: 1px solid var(--line); background: var(--raised); border-radius: 1.25rem; padding: clamp(1rem, 3vw, 1.75rem); }
+  .stat { border-top: 2px solid var(--fg); padding-top: .6rem; }
+  .stat b { display: block; font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.05; letter-spacing: -0.03em; }
+  .stat span { font-size: .8rem; color: var(--muted); }
+  .check { width: 2.4rem; height: 2.4rem; border-radius: 999px; border: 2px solid var(--line); background: transparent; display: grid; place-items: center; cursor: pointer; flex: none; transition: all .15s ease; color: transparent; }
+  .check[aria-pressed="true"] { background: var(--c, var(--accent)); border-color: var(--c, var(--accent)); color: #fff; }
+  .check svg { width: 1.1rem; height: 1.1rem; }
+}
+
+/* Prose for articles and landing text */
+.prose-habon { --tw-prose-body: var(--fg); --tw-prose-headings: var(--fg); --tw-prose-lead: var(--muted); --tw-prose-links: var(--accent-ink); --tw-prose-bold: var(--fg); --tw-prose-counters: var(--muted); --tw-prose-bullets: var(--accent); --tw-prose-hr: var(--line); --tw-prose-quotes: var(--fg); --tw-prose-quote-borders: var(--accent); --tw-prose-captions: var(--muted); --tw-prose-code: var(--fg); --tw-prose-th-borders: var(--line); --tw-prose-td-borders: var(--line); max-width: 68ch; font-size: 1.0625rem; line-height: 1.75; }
+.prose-habon h2 { font-size: 1.7rem; margin-top: 2.4em; line-height: 1.15; }
+.prose-habon h3 { font-size: 1.25rem; margin-top: 1.8em; }
+.prose-habon a { text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 600; }
+.prose-habon a:hover { text-decoration-thickness: 2px; }
+.prose-habon table { font-size: .95rem; }
+.prose-habon th { text-align: left; }
+
+/* Reveal motion (cheap, opt-out via reduced motion) */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+.rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; }
+@keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.floaty { animation: floaty 7s ease-in-out infinite; }
+
+.sun { background: radial-gradient(circle at 35% 30%, #ffc766, #f9a93a 60%, #f39a1f); }
+
+@media print {
+  header, footer, .no-print, .app-cta { display: none !important; }
+  body { background: #fff; color: #000; }
+}
+
+/* Reserve space for client-rendered tools so they cause no layout shift */
+.tool-shell > div[id$="-root"] { min-height: 30rem; }
+@media (min-width: 1024px) { .tool-shell > div[id$="-root"] { min-height: 26rem; } }
+#consistency-root, #routinegen-root { min-height: 22rem !important; }

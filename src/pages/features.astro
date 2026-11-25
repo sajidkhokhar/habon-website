@@ -1,0 +1,37 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Shot from '../components/Shot.astro';
+import AppStoreButton from '../components/AppStoreButton.astro';
+const rows = [
+  { shot: 'goals', h: 'Track habits your way', items: ['Yes/No, Count and Duration goals', 'Limit goals for habits you want to cut back', 'Build habits or quit them, with ready-made templates', 'Daily, specific weekdays or every-few-days schedules', 'Habits that happen several times a day, with a reminder for each time', 'Skip a day, pause a habit or fix a past day'] },
+  { shot: 'streaks', h: 'Stay on track', items: ['Streaks that only count the days a habit is due', 'Reminders with Mark done and Add one right from the notification', 'A daily progress ring and a perfect-day streak', 'A gentle evening check-in', 'Routines that group habits into a morning, afternoon or evening flow'] },
+  { shot: 'insights', h: 'See your progress', items: ['History calendar for every day you tracked', 'Week, month and year analytics with completion rates and per-habit breakdowns', 'Honest insights, shown only when your data supports them', '36 achievements for streaks, perfect days, routines and more'] },
+  { shot: 'watch', h: 'Made for your whole day', items: ['Apple Watch app with a watch-face complication', 'Apple Health (read-only): steps, exercise and workouts next to your habits', 'Relaxing sounds and calm full-screen scenes for meditation habits', 'Nine color themes with matching app icons, light and dark mode, Dynamic Type and VoiceOver', 'Profile photo or one of 109 illustrated characters', 'English and Spanish (Mexico)'] },
+] as const;
+const faq = [
+  { q: 'Is Habon private?', a: 'Your habits and history stay on your device and no account is needed. Habon uses an anonymous ID for usage counts and crash reports, never includes your habit names or notes, and does not use the advertising identifier or track you across other apps.' },
+  { q: 'What does Premium add?', a: 'Unlimited habits and routines, year analytics with a heatmap and all insights, all 9 themes with their app icons, and all 15 relaxing sounds and 7 calm scenes. Premium is a monthly or yearly subscription, or a one-time lifetime purchase.' },
+];
+---
+<PageLayout
+  title="Habon Features: Streaks, Routines, Insights, Apple Watch | Habon"
+  description="Everything Habon does: yes/no, count and duration goals, schedule-aware streaks, routines, reminders, analytics, achievements, Apple Watch and Health."
+  h1="Habon features"
+  eyebrow="Habit tracker and daily routine planner"
+  lead="Calm on the surface, detailed underneath. Everything below is in the app today, straight from the App Store listing."
+  crumbs={[{ name: 'Features', href: '/features/' }]}
+  faq={faq} cta={false} wide
+>
+  <div slot="tool" class="not-prose space-y-20">
+    {rows.map((r, i) => (
+      <section class:list={['grid items-center gap-10 md:grid-cols-2', i % 2 && 'md:[&>div:first-child]:order-2']}>
+        <div><h2 class="text-3xl font-bold">{r.h}</h2><ul class="mt-5 space-y-3">{r.items.map((it) => <li class="flex gap-3"><span aria-hidden="true" class="mt-2 size-2 shrink-0 rounded-full bg-accent"></span><span>{it}</span></li>)}</ul></div>
+        <div class="flex justify-center"><Shot name={r.shot} width={300} class="w-64 rounded-[2rem] border border-line shadow-xl sm:w-72" /></div>
+      </section>
+    ))}
+  </div>
+  <h2>Free and Premium</h2>
+  <p>Free forever: 2 active habits and 1 routine, all goal types, streaks, history, achievements and unlimited reminders, week and month analytics with your top insight, the Apple Watch app and Apple Health activity, 5 classic themes, 2 relaxing sounds and the Aurora scene.</p>
+  <p>Premium: unlimited habits and routines, year analytics with a heatmap and all insights, all 9 themes with their app icons, all 15 relaxing sounds and 7 calm scenes. If you stop subscribing, your habits stay fully usable. You just cannot add new ones above the free limit.</p>
+  <div class="not-prose my-8 flex flex-wrap items-center gap-5"><AppStoreButton placement="features-bottom" height={54} /><span class="text-sm text-muted">Requires iOS 27.0 or later · iPhone, iPad, Apple Watch</span></div>
+</PageLayout>

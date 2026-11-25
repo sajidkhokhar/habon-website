@@ -1,0 +1,28 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TrackerApp from '../components/TrackerApp.astro';
+const faq = [
+  { q: 'Is this the same data as the online habit tracker?', a: 'Yes. This is the Today view of the same tracker, so habits you add here appear there with full stats, week and month views.' },
+  { q: 'What should I track daily?', a: 'Two to five small, specific actions. Try water, a short walk, reading, a tidy-up or a few minutes of stillness.' },
+];
+---
+<PageLayout
+  title="Daily Habit Tracker: Free One-Tap Daily Check-In | Habon"
+  description="A free daily habit tracker. Add a few habits, tick them off each day with one tap, and watch your streaks. No sign-up. Saves in your browser."
+  h1="Daily habit tracker"
+  eyebrow="Free tool · One tap a day"
+  lead="Your habits for today, nothing else. Tick them off, step back a day to fix a miss and keep the streak honest."
+  crumbs={[{ name: 'Daily habit tracker', href: '/daily-habit-tracker/' }]}
+  tool={{ name: 'Habon daily habit tracker' }} faq={faq}
+  related={['online-habit-tracker', 'daily-routine-planner', 'habit-ideas-generator']} ctaShot="today"
+>
+  <TrackerApp slot="tool" mode="today" />
+  <h2>Make daily tracking take ten seconds</h2>
+  <ol>
+    <li>Keep the list to what you can finish in an ordinary day.</li>
+    <li>Check in at the same moment daily: after dinner, or when you close the laptop.</li>
+    <li>If you missed yesterday, tap the left arrow and log it so your records stay true.</li>
+    <li>On Sunday, open the <a href="/online-habit-tracker/">full tracker</a> and look at the week.</li>
+  </ol>
+  <p>For a printed daily layout, try the <a href="/daily-routine-planner/">daily routine planner</a> or the <a href="/printable-habit-tracker/">printable tracker</a>. Planning your day by time? Read <a href="/blog/how-to-track-daily-goals/">how to track daily goals</a>.</p>
+</PageLayout>

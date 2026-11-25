@@ -1,0 +1,36 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'How is a habit streak calculated?', a: 'A streak is the number of consecutive days with a completed entry. The current streak counts back from today, or from yesterday if you have not logged today yet, until it hits a missed day. The longest streak is the best run anywhere in your history.' },
+  { q: 'Does missing one day reset my streak?', a: 'In a strict daily streak, yes. That is why many people also track completion percentage, which shows that 27 days out of 30 is still strong consistency.' },
+  { q: 'What are missed days?', a: 'Days between your first completed date and today that have no entry. Add dates from before you began if you want them counted.' },
+  { q: 'What if my habit is not daily?', a: 'This calculator treats every calendar day as due. For habits on specific weekdays or every few days, Habon\'s streaks only count the days a habit is due, so rest days do not break them.' },
+];
+---
+<PageLayout
+  title="Habit Streak Calculator: Current & Longest Streak | Habon"
+  description="Free habit streak calculator. Tap days on a calendar or paste dates to get your current streak, longest streak, completion percentage and missed days."
+  h1="Habit streak calculator"
+  eyebrow="Free tool · No sign-up"
+  lead="Tick the days you did your habit, or paste a list of dates, and get your current streak, longest streak, missed days and consistency by weekday."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Habit streak calculator', href: '/habit-streak-calculator/' }]}
+  tool={{ name: 'Habon habit streak calculator' }}
+  related={['habit-consistency-calculator', 'online-habit-tracker', '30-day-habit-challenge']}
+  faq={faq} ctaShot="streaks" ctaTitle="Streaks that follow your schedule"
+  ctaText="Habon only counts the days a habit is due, so rest days and skipped days do not wreck a good run. Daily, specific weekdays or every few days."
+>
+  <div slot="tool" class="tool-shell"><div id="streak-root"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>What this calculator measures</h2>
+  <ul>
+    <li><strong>Current streak:</strong> consecutive days up to today. If today is still open, yesterday keeps it alive.</li>
+    <li><strong>Longest streak:</strong> your best run, highlighted on the calendar in amber.</li>
+    <li><strong>Completion:</strong> days done divided by days since your first entry.</li>
+    <li><strong>Missed days:</strong> days in that span with no entry.</li>
+    <li><strong>Weekday pattern:</strong> which days you are strongest and weakest on, which is often the most useful clue.</li>
+  </ul>
+  <h2>Two ways to enter dates</h2>
+  <p>Tap days on the calendar for a quick log. If you kept a record somewhere else, paste dates in <code>YYYY-MM-DD</code> or <code>MM/DD/YYYY</code> format, one per line. To fill a long run quickly, set a start date and use <em>Fill range</em>, then tap off any days you missed.</p>
+  <h2>How to use the numbers</h2>
+  <p>A long streak is motivating, but completion is the fairer measure. Someone who completes 27 of 30 days has a 90% rate even if the longest streak is only 12. If your streak breaks, look at the weekday chart and plan around your weakest day. For more on why, see <a href="/blog/how-to-calculate-your-habit-streak/">how to calculate your habit streak</a> and <a href="/blog/how-to-stay-consistent-with-habits/">how to stay consistent</a>.</p>
+</PageLayout>
+<script>import '../scripts/streak-calc';</script>

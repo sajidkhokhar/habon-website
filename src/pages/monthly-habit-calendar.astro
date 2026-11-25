@@ -1,0 +1,29 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'Can I see multiple habits at once?', a: 'Yes. Each habit is a row and each day of the month is a column, so you can scan for gaps across every habit together.' },
+  { q: 'Can I look at past months?', a: 'Yes. Use the arrows to move between months. Future days are locked so you cannot tick them early.' },
+  { q: 'How do I print it?', a: 'Use the Download PDF button. It makes a landscape calendar for the month you are viewing with your habits listed and empty boxes to fill in.' },
+];
+---
+<PageLayout
+  title="Monthly Habit Calendar: Free Online Month View & Printable PDF | Habon"
+  description="See a whole month of habits on one screen. Add habits, tick off each day, spot the gaps and print a landscape monthly habit calendar as a PDF."
+  h1="Monthly habit calendar"
+  eyebrow="Free tool · Printable"
+  lead="One row per habit, one column per day. A month view makes streaks, gaps and weak weekdays obvious at a glance."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Monthly habit calendar', href: '/monthly-habit-calendar/' }]}
+  tool={{ name: 'Habon monthly habit calendar' }}
+  related={['weekly-habit-planner', 'habit-streak-calculator', 'printable-habit-tracker']}
+  faq={faq} wide ctaShot="streaks"
+>
+  <div slot="tool" class="tool-shell"><div id="grid-root" data-mode="month"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>What to look for in a month of habits</h2>
+  <ul>
+    <li><strong>Vertical gaps</strong> (a whole column empty) usually mean travel, illness or a busy day. They are information, not failure.</li>
+    <li><strong>Horizontal gaps</strong> (one row sparse) mean that habit is too big, badly timed or not important enough. Shrink or move it.</li>
+    <li><strong>Weekend dips</strong> show a habit tied to your work routine. Consider a lighter weekend version.</li>
+  </ul>
+  <p>Most people do better tracking three to five habits than ten. If you want streaks and completion rates calculated for you, use the <a href="/online-habit-tracker/">online habit tracker</a>.</p>
+</PageLayout>
+<script>import '../scripts/grid';</script>

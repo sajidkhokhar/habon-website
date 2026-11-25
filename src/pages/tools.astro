@@ -1,0 +1,30 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { TOOLS, toolHref } from '../lib/site';
+const groups = ['Track', 'Plan', 'Print', 'Calculate', 'Ideas'] as const;
+const faq = [
+  { q: 'Are these tools really free?', a: 'Yes. They run entirely in your browser with no sign-up, no ads and no paid features.' },
+  { q: 'Where is my data stored?', a: 'In your browser\'s localStorage on your device. Nothing is uploaded to a server, so clearing site data erases it. Export a backup from the online habit tracker if it matters.' },
+  { q: 'Do the tools sync with the Habon app?', a: 'No. They are separate. The Habon app stores data on your iPhone and is built for reminders and the Apple Watch.' },
+];
+---
+<PageLayout
+  title="Free Habit Tools: Trackers, Planners & Printables | Habon"
+  description="Free habit tools in your browser: online habit tracker, printable PDF trackers, routine planner, 30-day challenge, streak calculator and goal planner."
+  h1="Free habit tools"
+  eyebrow="No sign-up · Runs in your browser"
+  lead="Twelve free tools for building habits: track them, plan them, print them and measure them. Your data stays on your device."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }]}
+  faq={faq} ctaShot="today"
+>
+  {groups.map((g) => (
+    <>
+      <h2>{g === 'Track' ? 'Track your habits' : g === 'Plan' ? 'Plan your days and goals' : g === 'Print' ? 'Print a tracker' : g === 'Calculate' ? 'Measure your progress' : 'Get ideas'}</h2>
+      <ul class="not-prose mt-4 divide-y divide-line border-y border-line">
+        {TOOLS.filter((t) => t.group === g).map((t) => (
+          <li><a href={toolHref(t.slug)} class="group flex items-start justify-between gap-4 py-4"><span><span class="font-display text-xl font-bold group-hover:underline">{t.name}</span><span class="block text-muted">{t.blurb}</span></span><span aria-hidden="true" class="mt-1 text-accent-ink">→</span></a></li>
+        ))}
+      </ul>
+    </>
+  ))}
+</PageLayout>

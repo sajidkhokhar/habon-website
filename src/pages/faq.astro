@@ -1,0 +1,30 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'What is Habon?', a: 'Habon is a calm habit tracker and daily routine planner for iPhone, iPad and Apple Watch. This website also hosts free habit tools that run in your browser.' },
+  { q: 'Is Habon free?', a: 'Yes, to download and use. The free plan includes 2 active habits and 1 routine with every goal type, streaks, history, achievements and unlimited reminders. Premium is optional.' },
+  { q: 'Which iOS version do I need?', a: 'iOS 27.0 or later.' },
+  { q: 'Does Habon need an account?', a: 'No. Your habits and history stay on your device.' },
+  { q: 'Is there an Android version?', a: 'Not at the moment. Habon is for Apple devices. The free web tools on this site work in any modern browser.' },
+  { q: 'Can I quit a bad habit with Habon?', a: 'Yes. Limit goals are for habits you want to cut back, like screen time or sugar, and there are ready-made templates for building or quitting habits.' },
+  { q: 'Do streaks break if I take a rest day?', a: 'No. Streaks only count the days a habit is due, and you can skip a day, pause a habit or fix a past day.' },
+  { q: 'Does Habon work with Apple Watch and Apple Health?', a: 'Yes. There is an Apple Watch app with a complication, and optional read-only Apple Health data (steps, exercise minutes, active energy, distance and workouts). Habon never writes to Health.' },
+  { q: 'What happens if I stop paying for Premium?', a: 'Your habits stay fully usable. You just cannot add new ones above the free limit of 2 active habits and 1 routine.' },
+  { q: 'Are the free tools on this website connected to the app?', a: 'No. They store data in your own browser and are separate from the app.' },
+  { q: 'Where is my web tool data stored?', a: 'In your browser\'s localStorage on your device. It is never uploaded, so clearing site data deletes it. Export a backup from the online habit tracker to keep a copy.' },
+  { q: 'How do I contact Habon?', a: 'See the <a href="/contact/">contact page</a>.' },
+];
+---
+<PageLayout
+  title="Habon FAQ: Pricing, Privacy, Apple Watch & Free Tools | Habon"
+  description="Answers to common questions about the Habon habit tracker app and the free habit tools on this site: pricing, devices, privacy, streaks and more."
+  h1="Frequently asked questions"
+  eyebrow="Habon FAQ"
+  lead="Quick answers about the app and the free tools."
+  crumbs={[{ name: 'FAQ', href: '/faq/' }]}
+  faq={faq} ctaShot="today"
+>
+  <div class="not-prose divide-y divide-line border-y border-line">
+    {faq.map((f) => (<details class="group py-4"><summary class="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-semibold [&::-webkit-details-marker]:hidden"><h2 class="text-lg font-semibold">{f.q}</h2><span aria-hidden="true" class="mt-1 text-accent-ink transition-transform group-open:rotate-45">+</span></summary><p class="mt-3 max-w-2xl text-muted" set:html={f.a} /></details>))}
+  </div>
+</PageLayout>

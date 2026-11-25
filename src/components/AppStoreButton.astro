@@ -1,0 +1,9 @@
+---
+import { SITE } from '../lib/site';
+interface Props { placement: string; class?: string; height?: number }
+const { placement, class: cls = '', height = 48 } = Astro.props;
+const width = Math.round(height * (119.66407 / 40));
+---
+<a href={SITE.appStoreUrl} class:list={['inline-block rounded-lg transition-transform hover:-translate-y-0.5', cls]} data-track="app_store_click" data-placement={placement} rel="noopener" aria-label="Download Habon on the App Store">
+  <img src="/app-store-badge.svg" width={width} height={height} alt="Download on the App Store" loading="lazy" decoding="async" />
+</a>

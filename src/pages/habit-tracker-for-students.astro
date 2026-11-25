@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'What habits should a student track?', a: 'Study blocks, sleep, a daily review of notes, assignment planning and movement. Keep it to three to five.' },
+  { q: 'How do I track habits around a changing class schedule?', a: 'Use weekday-specific habits, such as "Review lecture notes" on class days, and keep a small daily anchor like sleep time.' },
+  { q: 'Is there a free habit tracker for students?', a: 'Yes. The online tracker and printable sheets here are free, and Habon for iPhone includes 2 active habits free.' },
+];
+---
+<PageLayout
+  title="Habit Tracker for Students: Study, Sleep & Routine Habits | Habon"
+  description="A practical habit tracker guide for students: which study, sleep and routine habits to track, how to fit a changing schedule, and free printable and online tools."
+  h1="Habit tracker for students"
+  eyebrow="Study habits · Sleep · Routine"
+  lead="A student week is uneven: classes, deadlines, exams. A good habit tracker bends around that instead of breaking."
+  crumbs={[{ name: 'Habit tracker for students', href: '/habit-tracker-for-students/' }]}
+  faq={faq} related={['online-habit-tracker', 'weekly-habit-planner', 'printable-habit-tracker', 'daily-routine-planner']} ctaShot="routines"
+>
+  <h2>Five habits worth tracking as a student</h2>
+  <ol>
+    <li><strong>A daily study block.</strong> 25 to 50 focused minutes, same time each day, beats a weekend cram.</li>
+    <li><strong>Sleep timing.</strong> "Lights out by 11:30" is trackable and protects everything else.</li>
+    <li><strong>Review notes.</strong> Ten minutes after each class locks in what you learned.</li>
+    <li><strong>Plan tomorrow.</strong> Five minutes at night to write down what is due.</li>
+    <li><strong>Move your body.</strong> A short walk counts, and it helps focus.</li>
+  </ol>
+  <h2>Handling an uneven schedule</h2>
+  <ul>
+    <li>Use <strong>weekly targets</strong> ("study 5 days a week") instead of rigid daily ones. The <a href="/online-habit-tracker/">online tracker</a> supports this.</li>
+    <li>Anchor habits to events you cannot skip, such as after your first class or after dinner.</li>
+    <li>Set a lighter <strong>exam-week version</strong> of each habit so a hard week does not end the chain.</li>
+  </ul>
+  <h2>Tools for different student setups</h2>
+  <ul>
+    <li><strong>Desk or dorm wall:</strong> a <a href="/printable-habit-tracker/">printable weekly tracker</a>.</li>
+    <li><strong>Between classes:</strong> an iPhone app with reminders, like <a href="/habit-tracker-for-iphone/">Habon</a>.</li>
+    <li><strong>A semester sprint:</strong> a <a href="/30-day-habit-challenge/">30-day challenge</a> for one study habit.</li>
+  </ul>
+  <p>More: <a href="/blog/best-habit-tracking-methods-for-students/">best habit tracking methods for students</a>.</p>
+</PageLayout>

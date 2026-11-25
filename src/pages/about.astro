@@ -1,0 +1,27 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../lib/site';
+---
+<PageLayout
+  title="About Habon: An Independent, Private Habit Tracker for iPhone"
+  description="Habon is an independent habit tracker and daily routine planner for iPhone and Apple Watch, made by Sajid A Khokhar. Learn what it is for and how this site works."
+  h1="About Habon"
+  eyebrow="Independent and private"
+  lead="Habon is a habit tracker built to stay out of your way: one glance, one tap, and honest numbers."
+  crumbs={[{ name: 'About Habon', href: '/about/' }]}
+  ctaShot="profile" updated="November 2026"
+>
+  <h2>What Habon is</h2>
+  <p>Habon is an iPhone, iPad and Apple Watch app for building good habits and quitting bad ones. It is made by <a href={SITE.developerUrl}>{SITE.developerName}</a>, an independent developer. Version 1.0 was released on the App Store in November 2026.</p>
+  <h2>What it believes</h2>
+  <ul>
+    <li><strong>Tracking should take a second.</strong> Today is one glance and one tap.</li>
+    <li><strong>Numbers should be honest.</strong> Streaks and insights come from your real records and appear only when the data supports them.</li>
+    <li><strong>Your data is yours.</strong> Habits and history stay on your device. No account.</li>
+    <li><strong>Rest is not failure.</strong> Streaks follow your schedule, not the calendar.</li>
+  </ul>
+  <h2>About this website</h2>
+  <p>This site has two purposes: to explain the app, and to offer free habit tools that are useful on their own, such as an <a href="/online-habit-tracker/">online habit tracker</a> and <a href="/printable-habit-tracker/">printable trackers</a>. The tools run in your browser and are not connected to the app. The articles are written to be practical, and where they mention research they say what it does and does not show.</p>
+  <p>Habon does not have user ratings or reviews to show yet, so this site does not show any. See the real <a href={SITE.appStoreUrl}>App Store listing</a>.</p>
+  <p>Questions? Visit the <a href="/contact/">contact page</a>.</p>
+</PageLayout>

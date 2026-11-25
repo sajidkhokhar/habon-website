@@ -1,0 +1,22 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../lib/site';
+---
+<PageLayout
+  title="Contact Habon: Support, Feedback & Press"
+  description="How to reach the Habon team: app support through the App Store, feedback on the website and tools through GitHub, and developer information."
+  h1="Contact"
+  eyebrow="Get in touch"
+  lead="Habon is made by one independent developer. Here are the best ways to reach out."
+  crumbs={[{ name: 'Contact', href: '/contact/' }]}
+  cta={false} updated="November 2026"
+>
+  <h2>App support and feedback</h2>
+  <p>Open the <a href={SITE.appStoreUrl}>Habon listing on the App Store</a> and use the support options on the page, or use the developer contact on the <a href={SITE.developerUrl}>developer page</a>. If you like the app, a rating or review on the App Store helps other people find it.</p>
+  <h2>Website and free tools</h2>
+  <p>Found a bug in a tool or a mistake in an article? Open an issue on the <a href={SITE.repoUrl + '/issues'}>project's GitHub repository</a>. Please do not include personal data. Your tool data lives only in your browser, so we cannot see or recover it.</p>
+  <h2>Privacy questions</h2>
+  <p>See the <a href="/privacy/">website privacy policy</a> and the <a href={SITE.appPrivacyUrl}>app privacy policy</a>.</p>
+  <h2>Developer</h2>
+  <p>{SITE.developerName} · <a href={SITE.developerUrl}>More apps on the App Store</a></p>
+</PageLayout>

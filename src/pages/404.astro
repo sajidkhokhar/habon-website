@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { TOOLS, toolHref } from '../lib/site';
+---
+<BaseLayout title="Page not found | Habon" description="That page does not exist. Try the free habit tools or the Habon app." noindex path="/404/">
+  <div class="wrap-narrow py-24">
+    <p class="eyebrow">404</p>
+    <h1 class="mt-3 text-5xl font-extrabold">That page took a rest day.</h1>
+    <p class="mt-4 text-lg text-muted">The link may be old or mistyped. Here are some places to go instead.</p>
+    <ul class="mt-8 grid gap-2 sm:grid-cols-2">
+      <li><a class="btn w-full justify-start" href="/">Home</a></li>
+      {TOOLS.slice(0, 5).map((t) => <li><a class="btn w-full justify-start" href={toolHref(t.slug)}>{t.name}</a></li>)}
+      <li><a class="btn w-full justify-start" href="/blog/">Blog</a></li>
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TrackerApp from '../components/TrackerApp.astro';
+const faq = [
+  { q: 'Is this online habit tracker really free?', a: 'Yes. There is no sign-up, no paywall and no limit on the number of habits. It runs entirely in your browser.' },
+  { q: 'Where is my habit data stored?', a: 'In your browser\'s localStorage on this device. It is never uploaded. Because of that, clearing site data or switching browsers or devices starts you from a blank tracker, so use <strong>More → Export backup</strong> to keep a copy.' },
+  { q: 'How are weekly and monthly streaks counted?', a: 'A weekly habit with a target of 3 keeps its streak for every week in which you check it at least 3 times. The current week is never counted against you while it is still in progress. Monthly habits work the same way with calendar months.' },
+  { q: 'Can I sync it with my phone?', a: 'The web tracker does not sync. If you want habits on your iPhone and Apple Watch with reminders, the Habon app is built for that and is free to download.' },
+];
+---
+<PageLayout
+  title="Free Online Habit Tracker: Daily, Weekly & Monthly | Habon"
+  description="A free online habit tracker with daily, weekly and monthly habits, a calendar, streaks, completion stats and charts. No sign-up. Data stays in your browser."
+  h1="Free online habit tracker"
+  eyebrow="Free tool · No sign-up"
+  lead="Create habits, check them off, and watch your streaks and completion rates build. It runs in your browser and saves on this device."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: 'Online habit tracker', href: '/online-habit-tracker/' }]}
+  tool={{ name: 'Habon online habit tracker', category: 'LifestyleApplication' }}
+  related={['habit-streak-calculator', 'monthly-habit-calendar', 'printable-habit-tracker', 'habit-ideas-generator']}
+  faq={faq}
+  ctaShot="today"
+  ctaTitle="Want reminders and an Apple Watch app?"
+  ctaText="This web tracker is great at a desk. Habon puts the same one-tap check-in on your iPhone and Apple Watch, with reminders you can act on right from the notification."
+>
+  <TrackerApp slot="tool" />
+  <h2>How to use this habit tracker</h2>
+  <ol>
+    <li><strong>Add one or two habits.</strong> Make them small and specific, such as "Read 10 pages" rather than "Read more".</li>
+    <li><strong>Check off today.</strong> Use the Today tab. You can tap back through earlier days if you forgot to log something.</li>
+    <li><strong>Choose how each habit is tracked.</strong> Daily habits count consecutive days. Weekly and monthly habits count consecutive weeks or months in which you hit your target.</li>
+    <li><strong>Review weekly.</strong> The Week and Month tabs show the pattern, and the Stats tab shows your 30-day completion rate and a check-in chart.</li>
+  </ol>
+  <h2>What the stats mean</h2>
+  <ul>
+    <li><strong>Current streak</strong> is the number of consecutive periods (days, weeks or months) you have met the target. If today is not done yet, yesterday's streak is still alive.</li>
+    <li><strong>Best</strong> is the longest run you have ever had for that habit.</li>
+    <li><strong>30-day rate</strong> compares what you did with what you planned over the last 30 days, or since you created the habit if that is more recent.</li>
+  </ul>
+  <p>For a deeper look at the method, read <a href="/blog/how-to-track-habits-effectively/">how to track habits effectively</a>, and if you want to count a streak from a list of dates instead, use the <a href="/habit-streak-calculator/">habit streak calculator</a>.</p>
+  <h2>Online tracker or app?</h2>
+  <p>A browser tracker has no install and no account, which makes it good for trying habit tracking or for a desk routine. It cannot send reminders when the tab is closed and does not sync between devices. If you want that, <a href="/habit-tracker-for-iphone/">a habit tracker app for iPhone</a> is the better fit, and you can always <a href="/printable-habit-tracker/">print a paper tracker</a> as well.</p>
+</PageLayout>

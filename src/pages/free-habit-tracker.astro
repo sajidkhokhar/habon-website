@@ -1,0 +1,42 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'What does "free" usually mean for habit trackers?', a: 'Often free to download with limits, such as a cap on the number of habits, with extras behind a subscription. Always check the limit before you build your routine around an app.' },
+  { q: 'What is free in Habon?', a: 'Free includes 2 active habits and 1 routine, all goal types, streaks, history, achievements, unlimited reminders, week and month analytics with your top insight, the Apple Watch app and Apple Health activity, 5 classic themes, 2 relaxing sounds and the Aurora scene. Premium adds unlimited habits and routines, year analytics, all nine themes and all sounds and scenes.' },
+  { q: 'If I stop subscribing to Premium, do I lose my habits?', a: 'No. According to the App Store listing, your habits stay fully usable. You just cannot add new ones above the free limit.' },
+];
+---
+<PageLayout
+  title="Free Habit Tracker: Online, Printable & iPhone App | Habon"
+  description="Your free habit tracker options compared honestly: a no-sign-up online tracker, free printable PDFs, and what you get free in the Habon iPhone app."
+  h1="Free habit tracker options"
+  eyebrow="No hidden catch, with the limits spelled out"
+  lead="You can track habits for free in three ways. Here is what each gives you and where each one stops."
+  crumbs={[{ name: 'Free habit tracker', href: '/free-habit-tracker/' }]}
+  faq={faq} related={['online-habit-tracker', 'printable-habit-tracker', '30-day-habit-challenge']} ctaShot="today" ctaTitle="Free forever for two habits"
+>
+  <h2>1. A free online tracker, no limits</h2>
+  <p>The <a href="/online-habit-tracker/">Habon online habit tracker</a> has no sign-up and no cap on habits. It stores data in your browser, so it does not sync and cannot send reminders. Best for trying habit tracking or a desk routine.</p>
+  <h2>2. Free printable trackers</h2>
+  <p>The <a href="/printable-habit-tracker/">printable generator</a> makes weekly and monthly PDFs with your own habits, in US Letter or A4. See <a href="/habit-tracker-pdf/">ready-made PDFs</a> if you want one in a click.</p>
+  <h2>3. A free app on your phone</h2>
+  <p>Habon for iPhone is free to download. The free plan is deliberately generous about <em>how</em> you track and limited on <em>how many</em> habits:</p>
+  <table>
+    <thead><tr><th></th><th>Free</th><th>Premium</th></tr></thead>
+    <tbody>
+      <tr><td>Active habits</td><td>2</td><td>Unlimited</td></tr>
+      <tr><td>Routines</td><td>1</td><td>Unlimited</td></tr>
+      <tr><td>Goal types, streaks, history, achievements, reminders</td><td>All</td><td>All</td></tr>
+      <tr><td>Analytics</td><td>Week and month, top insight</td><td>Plus year heatmap and all insights</td></tr>
+      <tr><td>Themes</td><td>5 classic</td><td>All 9, with matching icons</td></tr>
+      <tr><td>Relaxing sounds and scenes</td><td>2 sounds, Aurora scene</td><td>15 sounds, 7 scenes</td></tr>
+    </tbody>
+  </table>
+  <p>Premium is a monthly or yearly subscription or a one-time lifetime purchase, per the App Store listing, and prices vary by region. Two habits is plenty to start: <a href="/blog/how-to-build-better-habits/">building one habit well</a> beats juggling ten.</p>
+  <h2>How to choose</h2>
+  <ul>
+    <li>Want to try it right now: use the online tracker.</li>
+    <li>Want something on the wall: print one.</li>
+    <li>Want reminders and an Apple Watch app: use <a href="/habit-tracker-for-iphone/">the iPhone app</a>.</li>
+  </ul>
+</PageLayout>

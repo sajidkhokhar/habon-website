@@ -1,0 +1,44 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+const faq = [
+  { q: 'Are the PDFs really free to download?', a: 'Yes. No email, no sign-up. They are generated on your device when you click.' },
+  { q: 'Can I edit the PDF?', a: 'The files are print-ready, not form-fillable. To put your own habit names on them, use the printable generator and type them in before downloading.' },
+  { q: 'US Letter or A4?', a: 'Use US Letter in the United States and Canada, and A4 almost everywhere else.' },
+];
+const sets = [
+  ['Weekly habit tracker', 'Portrait · 7 days · 10 rows', 'weekly'],
+  ['Monthly habit tracker', 'Landscape · whole month · 12 rows', 'monthly'],
+  ['30-day challenge sheet', 'Portrait · 30 numbered circles', 'challenge'],
+] as const;
+---
+<PageLayout
+  title="Habit Tracker PDF: Free Weekly, Monthly & 30-Day Downloads | Habon"
+  description="Download a free habit tracker PDF in one click: weekly, monthly or 30-day challenge, in US Letter or A4. Or customize with your own habits first."
+  h1="Habit tracker PDF downloads"
+  eyebrow="Free · One click · US Letter and A4"
+  lead="Ready-to-print habit tracker PDFs. Choose a layout and paper size and the file downloads straight away, no email needed."
+  crumbs={[{ name: 'Habit tracker PDF', href: '/habit-tracker-pdf/' }]}
+  faq={faq} related={['printable-habit-tracker', '30-day-habit-challenge']} ctaShot="insights"
+>
+  <div slot="tool" class="grid gap-4 md:grid-cols-3">
+    {sets.map(([name, meta, kind]) => (
+      <section class="rounded-2xl border border-line bg-raised p-5" aria-label={name}>
+        <h2 class="font-display text-xl font-bold">{name}</h2><p class="mt-1 text-sm text-muted">{meta}</p>
+        <div class="mt-4 space-y-2">
+          <button class="btn btn-primary w-full" data-pdf-preset={`${kind}:letter:grid`}>Download US Letter</button>
+          <button class="btn w-full" data-pdf-preset={`${kind}:a4:grid`}>Download A4</button>
+          <button class="btn btn-sm w-full" data-pdf-preset={`${kind}:letter:bold`}>Bold header, Letter</button>
+        </div>
+      </section>
+    ))}
+  </div>
+  <h2>Want your own habits on it?</h2>
+  <p>These files have blank rows to write on. To pre-fill habit names, change the color or choose another layout, open the <a href="/printable-habit-tracker/">printable habit tracker generator</a>. For more on choosing a layout, see <a href="/habit-tracker-templates/">habit tracker templates</a> and <a href="/blog/free-printable-habit-tracker-templates/">free printable habit tracker templates</a>.</p>
+  <h2>Printing tips</h2>
+  <ul>
+    <li>Set the print scale to 100% or "Actual size" so the boxes stay square.</li>
+    <li>Monthly sheets print in landscape. Choose landscape in the print dialog if your printer ignores the PDF setting.</li>
+    <li>Slip the sheet into a clear sleeve and use a dry-erase pen to reuse it.</li>
+  </ul>
+</PageLayout>
+<script>import '../scripts/printable';</script>

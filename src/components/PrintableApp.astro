@@ -1,0 +1,40 @@
+---
+import { MONTHS } from '../lib/dates';
+const colors = ['#f9a93a', '#e5604d', '#e0508b', '#8e6be0', '#4c8df6', '#2cb7a8', '#4caf63', '#3a3a3f'];
+const colorNames = ['Amber', 'Coral', 'Pink', 'Violet', 'Blue', 'Teal', 'Green', 'Charcoal'];
+---
+<section class="tool-shell" aria-label="Printable habit tracker generator">
+  <div id="printable-root" class="grid gap-8 lg:grid-cols-[22rem_1fr]">
+    <div class="space-y-4">
+      <fieldset><legend class="label">Template</legend>
+        <div class="inline-flex rounded-xl border border-line p-1">
+          <label class="cursor-pointer"><input type="radio" name="pt-kind" value="weekly" class="peer sr-only" /><span class="block rounded-lg px-4 py-1.5 text-sm font-semibold peer-checked:bg-fg peer-checked:text-bg peer-focus-visible:outline peer-focus-visible:outline-2">Weekly</span></label>
+          <label class="cursor-pointer"><input type="radio" name="pt-kind" value="monthly" class="peer sr-only" /><span class="block rounded-lg px-4 py-1.5 text-sm font-semibold peer-checked:bg-fg peer-checked:text-bg peer-focus-visible:outline peer-focus-visible:outline-2">Monthly</span></label>
+        </div></fieldset>
+      <div><label class="label" for="pt-title">Title</label><input id="pt-title" class="field" maxlength="40" /></div>
+      <div><label class="label" for="pt-habits">Habits (one per line, up to 20)</label><textarea id="pt-habits" class="field" rows="6" maxlength="800"></textarea></div>
+      <div class="grid grid-cols-2 gap-3">
+        <div><label class="label" for="pt-paper">Paper size</label><select id="pt-paper" class="field"><option value="letter">US Letter</option><option value="a4">A4</option></select></div>
+        <div><label class="label" for="pt-design">Layout</label><select id="pt-design" class="field"><option value="grid">Grid</option><option value="minimal">Minimal</option><option value="bold">Bold header</option><option value="dots">Dots</option></select></div>
+        <div><label class="label" for="pt-rows">Minimum rows</label><input id="pt-rows" type="number" min="1" max="20" class="field" /></div>
+        <div data-weekly><label class="label" for="pt-ws">Week starts</label><select id="pt-ws" class="field"><option value="1">Monday</option><option value="0">Sunday</option></select></div>
+        <div data-monthly hidden><label class="label" for="pt-month">Month</label><select id="pt-month" class="field">{MONTHS.map((m, i) => <option value={i}>{m}</option>)}</select></div>
+        <div data-monthly hidden><label class="label" for="pt-year">Year</label><input id="pt-year" type="number" min="2000" max="2100" class="field" /></div>
+      </div>
+      <fieldset><legend class="label">Color</legend>
+        <div class="flex flex-wrap gap-2">{colors.map((c, i) => <label class="cursor-pointer"><input type="radio" name="pt-color" value={c} class="peer sr-only" /><span class="block size-9 rounded-full ring-offset-2 ring-offset-[var(--raised)] peer-checked:ring-2 peer-focus-visible:ring-2" style={`background:${c};--tw-ring-color:${c}`}></span><span class="sr-only">{colorNames[i]}</span></label>)}</div></fieldset>
+      <div class="space-y-2 text-sm">
+        <label class="flex items-center gap-2" data-weekly><input id="pt-notes" type="checkbox" class="size-4 accent-[var(--accent)]" /> Include notes section</label>
+        <label class="flex items-center gap-2"><input id="pt-credit" type="checkbox" class="size-4 accent-[var(--accent)]" /> Small “Made with Habon” footer</label>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-2"><button id="pt-dl" class="btn btn-primary" type="button">Download PDF</button><button id="pt-print" class="btn" type="button">Print</button></div>
+    </div>
+    <div>
+      <p class="label">Live preview</p>
+      <iframe id="pt-frame" title="PDF preview of your habit tracker" class="h-[34rem] w-full rounded-xl border border-line bg-soft sm:h-[44rem]"></iframe>
+      <p class="mt-2 text-xs text-muted">If the preview is blank in your browser, the download button still works.</p>
+    </div>
+  </div>
+  <noscript><p class="rounded-xl border border-line p-4">The generator needs JavaScript to build the PDF in your browser.</p></noscript>
+</section>
+<script>import '../scripts/printable';</script>

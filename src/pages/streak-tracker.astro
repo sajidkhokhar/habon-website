@@ -1,0 +1,31 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Shot from '../components/Shot.astro';
+const faq = [
+  { q: 'Do streaks help build habits?', a: 'Many people find them motivating because a visible chain is hard to break. The downside is all-or-nothing thinking, which is why it helps to also watch your completion rate.' },
+  { q: 'What counts toward a streak in Habon?', a: 'Habon streaks only count the days a habit is due. Rest days from a weekday schedule and days you skip do not break them.' },
+];
+---
+<PageLayout
+  title="Streak Tracker: How Streaks Work & Free Streak Tools | Habon"
+  description="How habit streaks work, why strict streaks backfire, and how to count them fairly. Free streak calculator plus schedule-aware streaks in the Habon iPhone app."
+  h1="Streak tracker"
+  eyebrow="Streaks, done fairly"
+  lead="A streak is the number of times in a row you did the thing. Counting it fairly is harder than it sounds."
+  crumbs={[{ name: 'Streak tracker', href: '/streak-tracker/' }]}
+  faq={faq} related={['habit-streak-calculator', 'habit-consistency-calculator', '30-day-habit-challenge']} ctaShot="streaks" ctaTitle="Streaks that follow your schedule"
+>
+  <h2>The problem with a strict streak</h2>
+  <p>A basic streak resets to zero on any missed day. That is motivating until the day you are ill, travelling or simply forgot, and then a 60-day run vanishes and the habit goes with it. Fairer streaks answer one question: <em>on the days this habit was meant to happen, did it?</em></p>
+  <h2>Three ways to count</h2>
+  <ul>
+    <li><strong>Calendar streak:</strong> consecutive days, no exceptions. Simple, harsh. Use the <a href="/habit-streak-calculator/">streak calculator</a>.</li>
+    <li><strong>Schedule-aware streak:</strong> only days the habit is due count. A Mon/Wed/Fri habit is not broken on Tuesday.</li>
+    <li><strong>Period streak:</strong> consecutive weeks or months that met a target, such as 3 workouts a week. The <a href="/online-habit-tracker/">online tracker</a> supports this.</li>
+  </ul>
+  <figure class="not-prose my-8 flex flex-wrap items-center gap-6"><Shot name="streaks" width={240} class="w-[240px] rounded-3xl border border-line" /><figcaption class="max-w-sm text-sm text-muted">Habon's streaks screen: current streak, best streak, completion rate and a month calendar. Rest days and skips never break a streak.</figcaption></figure>
+  <h2>Pair streaks with a completion rate</h2>
+  <p>If your streak breaks, you still have a record: 27 of 30 days is a 90% month. Use the <a href="/habit-consistency-calculator/">consistency calculator</a> to see it. Learn the arithmetic in <a href="/blog/how-to-calculate-your-habit-streak/">how to calculate your habit streak</a>.</p>
+  <h2>After a broken streak</h2>
+  <ol><li>Do the habit today, even a tiny version.</li><li>Do not judge the gap. Note why it happened.</li><li>Change one thing that would make the habit easier.</li></ol>
+</PageLayout>

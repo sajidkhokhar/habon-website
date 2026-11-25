@@ -1,0 +1,9 @@
+---
+interface Props { mode?: 'full' | 'today' }
+const { mode = 'full' } = Astro.props;
+---
+<section class="tool-shell" aria-label="Habit tracker tool">
+  <div id="tracker-root" data-mode={mode} aria-live="off"><p class="py-10 text-center text-muted">Loading your tracker…</p></div>
+  <noscript><p class="rounded-xl border border-line p-4">This free tracker needs JavaScript to run in your browser. Nothing is sent to a server.</p></noscript>
+</section>
+<script>import '../scripts/tracker';</script>

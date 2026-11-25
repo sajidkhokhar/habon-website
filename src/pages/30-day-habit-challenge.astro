@@ -1,0 +1,36 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { CHALLENGES } from '../lib/challenges';
+const faq = [
+  { q: 'Does it really take 30 days to build a habit?', a: 'There is no magic number. A well-known 2009 University College London study of 96 people found it took anywhere from 18 to 254 days for a new behavior to feel automatic, with a median of 66 days. A 30-day challenge is a useful starting commitment, not a finish line.' },
+  { q: 'What if I miss a day?', a: 'Mark it blank and carry on the next day. Missing once changes very little. The aim is to avoid missing twice in a row.' },
+  { q: 'Can I run a 7, 14 or 21 day challenge instead?', a: 'Yes. Choose the length from the dropdown. Shorter challenges are a good way to test whether a habit fits your life.' },
+  { q: 'Can I print the challenge sheet?', a: 'Yes. Download the PDF in US Letter or A4, or print it directly. Your progress here stays in this browser.' },
+];
+---
+<PageLayout
+  title="30-Day Habit Challenge: Free Tracker, Ideas & Printable Sheet | Habon"
+  description="Start a free 30-day habit challenge. Pick a ready-made challenge or write your own, check off each day, see your progress and print a challenge sheet."
+  h1="30-day habit challenge"
+  eyebrow="Free tool · Printable"
+  lead="Pick one small action, commit to 30 days and check each one off. Choose a ready-made challenge or write your own, then print the sheet for the fridge."
+  crumbs={[{ name: 'Free tools', href: '/tools/' }, { name: '30-day habit challenge', href: '/30-day-habit-challenge/' }]}
+  tool={{ name: 'Habon 30-day habit challenge tracker' }}
+  related={['printable-habit-tracker', 'habit-streak-calculator', 'habit-ideas-generator']}
+  faq={faq} ctaShot="quit" ctaTitle="Keep going after day 30"
+  ctaText="When the challenge ends, Habon keeps the streak going with reminders, Yes/No, Count and Duration goals, and Limit goals for habits you want to cut back."
+>
+  <div slot="tool" class="tool-shell"><div id="challenge-root"><p class="py-8 text-center text-muted">Loading…</p></div><noscript>Needs JavaScript.</noscript></div>
+  <h2>Ten challenges worth trying</h2>
+  <p>Each of these is small enough to do on a bad day, which is what makes a 30-day challenge finishable.</p>
+  <ul>{CHALLENGES.map((c) => <li><strong>{c.name}.</strong> {c.note}</li>)}</ul>
+  <h2>How to set a challenge up to succeed</h2>
+  <ol>
+    <li><strong>Make the action tiny and countable.</strong> "Walk 20 minutes" beats "get fit".</li>
+    <li><strong>Attach it to something you already do.</strong> After coffee, after brushing your teeth, after you close the laptop.</li>
+    <li><strong>Pick a start date within a few days.</strong> Waiting weeks for the perfect Monday kills momentum.</li>
+    <li><strong>Plan for the bad day.</strong> Decide the two-minute version you will do when you have no time.</li>
+    <li><strong>Review on day 30.</strong> Keep it, adjust it or retire it. See the step-by-step in <a href="/blog/how-to-start-a-30-day-habit-challenge/">how to start a 30-day habit challenge</a>.</li>
+  </ol>
+</PageLayout>
+<script>import '../scripts/challenge';</script>
