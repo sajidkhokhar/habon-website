@@ -38,3 +38,7 @@ Hi {name}, I read your post on {post}. I built a free tool that makes weekly or 
 - **Tagline:** A calm habit tracker for iPhone with schedule-aware streaks
 - **Description:** See long description. Topics: Productivity, Health & Fitness, iOS.
 - **Maker comment:** "I built Habon because most habit apps either nag or lie about your streaks. Habon only counts the days a habit is due, keeps your data on your device and works without an account. The free plan has 2 habits and 1 routine with every feature that matters for trying it. Feedback very welcome."
+
+## Status (updated 2026-11-25)
+- **AlternativeTo:** submitted 2026-11-25, in the review queue (no paid priority). Alternatives suggested: Streaks, Habitify, Loop Habit Tracker. Track under My submissions.
+- **Product Hunt:** launch scheduled for 2026-11-26 (12:01am PT). Edit or reschedule under My launches. Be present to answer comments; do not ask for upvotes.
