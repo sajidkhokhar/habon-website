@@ -88,7 +88,7 @@ scripts/lh.sh http://localhost:4321 mobile   # Lighthouse (needs CHROME_PATH)
 ## Content and accuracy rules
 
 - Facts about Habon come from its App Store listing. Do not add ratings, reviews, download counts or features that are not there.
-- The app requires iOS 18.0 or later (the iOS 18 build was submitted 25 Nov 2026; the App Store listing showed 27.0 until it is approved).
+- The app requires iOS 18.0 or later and its Apple Watch app watchOS 10 or later (the iOS 18 build, version 1.0.1, went live on the App Store on 25 Nov 2026).
 - Research claims in articles are limited to well-documented findings and phrased with their limits.
 
 ## Credits
