@@ -24,7 +24,7 @@
 **Pending**
 - **Request Indexing** for the homepage and key pages: Google returned "Quota exceeded" (daily per-account limit). Retry tomorrow for: `/`, `/online-habit-tracker/`, `/printable-habit-tracker/`, `/habit-tracker-for-iphone/`, `/free-habit-tracker/`, `/30-day-habit-challenge/`, `/daily-routine-planner/`. The sitemap is submitted, so Google will discover pages regardless.
 - Google Analytics 4 (for custom events: App Store clicks, tool use, PDF downloads): needs a GA4 measurement ID. Create a property, then set `PUBLIC_GA_ID` in Cloudflare Pages. The consent banner is already built and only appears when it is set. Cloudflare Web Analytics gives page views, referrers and countries but cannot record custom events.
-- Restrict the Cloudflare GitHub app to only `habon-website` (GitHub, Settings, Installed GitHub Apps, Cloudflare Workers and Pages, Repository access).
+- (Done 25 Nov 2026) Cloudflare GitHub app restricted to `habon-website` only.
 - Support email on the Contact page (none supplied).
 - Public submissions (Product Hunt, AlternativeTo, etc.): drafted in `SUBMISSIONS.md`, **not submitted**, awaiting approval.
 - Search rankings: none claimed. A new `pages.dev` site typically takes weeks to appear.
@@ -34,7 +34,7 @@
 - Google HTML-file verification works despite Cloudflare's 308 redirect from `.html`; keep `public/googlec79e22babffa6d98.html` in the repo.
 
 ## Cost
-Cloudflare Pages, Cloudflare Web Analytics, GitHub, Search Console: all free tier. **Total recurring cost: ₹0 / $0.** No domain purchased.
+Cloudflare Pages, Cloudflare Web Analytics, GitHub, Search Console: all free tier. The Cloudflare GitHub app is restricted to this one repository. **Total recurring cost: ₹0 / $0.** No domain purchased.
 
 ## Other
 See `SEO-RESEARCH.md` (competitor and keyword findings), `SUBMISSIONS.md` and `GROWTH-PLAN.md`.
