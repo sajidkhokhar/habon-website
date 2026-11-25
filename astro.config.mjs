@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Production URL. Change if the Cloudflare Pages subdomain differs.
-const SITE = process.env.SITE_URL || 'https://habon.pages.dev';
+const SITE = process.env.SITE_URL || 'https://habon-app.pages.dev';
 
 export default defineConfig({
   site: SITE,

@@ -29,7 +29,7 @@ async function newDoc(paper: Paper, orientation: 'portrait' | 'landscape'): Prom
 function credit(d: JsPDF, show: boolean, W: number, H: number) {
   if (!show) return;
   d.setFont('helvetica', 'normal'); d.setFontSize(7.5); d.setTextColor(...grey);
-  d.text('Made with Habon - free habit tools at habon.pages.dev', W / 2, H - 6, { align: 'center' });
+  d.text('Made with Habon - free habit tools at habon-app.pages.dev', W / 2, H - 6, { align: 'center' });
 }
 
 function box(d: JsPDF, x: number, y: number, size: number, design: Design, color: string) {

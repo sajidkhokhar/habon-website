@@ -6,7 +6,7 @@
 - Deploy, verify Search Console, submit sitemap, request indexing for 10 key URLs.
 - Install Cloudflare Web Analytics (and GA4 if desired). Confirm `app_store_click` events.
 - Add the same website URL to the App Store listing's **Marketing URL** and **Support URL** (App Store Connect). This is a legitimate, high-value link from apple.com.
-- Check `site:habon.pages.dev` weekly to see pages enter the index.
+- Check `site:habon-app.pages.dev` weekly to see pages enter the index.
 
 ## Week 2: link-worthy assets
 - Add A5 and yearly printable sizes, and a CSV/XLSX tracker template (autocomplete shows heavy Google Sheets/Excel demand).

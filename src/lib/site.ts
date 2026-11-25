@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Habon',
   fullName: 'Habit Tracker & Goals - Habon',
-  url: (import.meta.env.SITE as string) || 'https://habon.pages.dev',
+  url: (import.meta.env.SITE as string) || 'https://habon-app.pages.dev',
   tagline: 'A calm habit tracker and daily routine planner for iPhone',
   appId: '6828774437',
   appStoreUrl: 'https://apps.apple.com/us/app/habit-tracker-goals-habon/id6828774437',

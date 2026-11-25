@@ -1,7 +1,7 @@
 import { open } from './pw.mjs';
 import fs from 'node:fs';
 const base = process.env.BASE || 'http://localhost:4321';
-const site = process.env.SITE || 'https://habon.pages.dev';
+const site = process.env.SITE || 'https://habon-app.pages.dev';
 const idx = await (await fetch(base + '/sitemap-index.xml')).text();
 const sm = [...idx.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(site, base));
 let urls = [];
