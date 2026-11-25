@@ -55,3 +55,5 @@ Submit at https://www.saashub.com/services/submit (needs a free account). Heads-
 - **Pricing:** Freemium. **Platforms:** iOS, iPadOS, watchOS (requires iOS 18+, watchOS 10+).
 - **Logo:** `public/icon-512.png` · **Screenshots:** `src/assets/shots/` (today, streaks, routines, insights).
 - Honesty: no ratings, reviews, download counts or "#1" claims; it is a new app (Nov 2026).
+
+- **SaaSHub:** skipped (2026-11-25). Their submit form refused `habon-app.pages.dev` ("No more submissions from habon-app.pages.dev are allowed"; free subdomains are not accepted). Revisit only if Habon gets a custom domain.
