@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://habon-app.pages.dev/sitemap-index.xml
+Sitemap: https://habon-app.pages.dev/sitemap.xml
