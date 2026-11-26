@@ -1,5 +1,6 @@
 ---
 title: "How to Build Better Habits: A Practical, Evidence-Aware Guide"
+seoTitle: "How to Build Better Habits: A Practical Guide"
 description: "How to build better habits: start tiny, use cues and if-then plans, track honestly, expect it to take time and keep the number of habits low."
 published: 2026-11-25
 keyword: "how to build better habits"

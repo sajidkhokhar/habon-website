@@ -1,5 +1,6 @@
 ---
 title: "How to Start a 30-Day Habit Challenge (and Actually Finish It)"
+seoTitle: "How to Start a 30-Day Habit Challenge and Finish It"
 description: "Choose the right habit, define done, set a start date, plan for bad days and review on day 30. Includes what research says about how long habits take."
 published: 2026-11-25
 keyword: "30 day habit challenge"

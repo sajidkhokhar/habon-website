@@ -1,5 +1,6 @@
 ---
 title: "Free Printable Habit Tracker Templates (and How to Pick One)"
+seoTitle: "Free Printable Habit Tracker Templates"
 description: "Which printable habit tracker template to use, weekly, monthly, 30-day or daily routine, how to customize it, and tips for printing and actually using it."
 published: 2026-11-25
 keyword: "free printable habit tracker templates"

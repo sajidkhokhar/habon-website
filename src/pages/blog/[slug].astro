@@ -19,7 +19,7 @@ const rel = post.data.related.map((s) => TOOLS.find((t) => t.slug === s)).filter
 const more = others.filter((o) => o.data.related.some((r) => post.data.related.includes(r))).slice(0, 3);
 const crumbs = [{ name: 'Blog', href: '/blog/' }, { name: post.data.title, href: path }];
 ---
-<BaseLayout title={`${post.data.title} | Habon`} description={post.data.description} type="article" published={post.data.published} updated={post.data.updated} crumbs={crumbs} jsonLd={[article({ title: post.data.title, description: post.data.description, path, published: post.data.published, updated: post.data.updated })]}>
+<BaseLayout title={`${post.data.seoTitle ?? post.data.title} | Habon`} description={post.data.description} type="article" published={post.data.published} updated={post.data.updated} crumbs={crumbs} jsonLd={[article({ title: post.data.title, description: post.data.description, path, published: post.data.published, updated: post.data.updated })]}>
   <article class="wrap-narrow pt-6">
     <Breadcrumbs crumbs={crumbs} />
     <header class="mt-8">

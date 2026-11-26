@@ -1,5 +1,6 @@
 ---
 title: "How to Stay Consistent With Habits (When Motivation Fades)"
+seoTitle: "How to Stay Consistent With Habits"
 description: "Practical ways to stay consistent with habits: shrink the habit, use cues, never miss twice, plan for obstacles and measure completion rate instead of perfection."
 published: 2026-11-25
 keyword: "how to stay consistent with habits"
