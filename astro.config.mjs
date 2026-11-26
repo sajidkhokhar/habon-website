@@ -6,7 +6,10 @@ import tailwindcss from '@tailwindcss/vite';
 // Production URL. Change if the Cloudflare Pages subdomain differs.
 const SITE = process.env.SITE_URL || 'https://habon-app.pages.dev';
 
-// Also publish the full URL list at the conventional /sitemap.xml address.
+// Temporary: list only the home page in the sitemap. Set to false to list every page again.
+const HOME_ONLY_SITEMAP = true;
+
+// Also publish the URL list at the conventional /sitemap.xml address.
 const sitemapXml = {
   name: 'sitemap-xml',
   hooks: {
@@ -18,7 +21,7 @@ export default defineConfig({
   site: SITE,
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
-  integrations: [sitemap({ filter: (p) => !p.includes('/404') }), sitemapXml],
+  integrations: [sitemap({ filter: (p) => (HOME_ONLY_SITEMAP ? p === new URL('/', SITE).href : !p.includes('/404')) }), sitemapXml],
   vite: { plugins: [tailwindcss()] },
   prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
 });
