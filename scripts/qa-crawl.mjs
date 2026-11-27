@@ -2,10 +2,8 @@ import { open } from './pw.mjs';
 import fs from 'node:fs';
 const base = process.env.BASE || 'http://localhost:4321';
 const site = process.env.SITE || 'https://habon-app.pages.dev';
-const idx = await (await fetch(base + '/sitemap-index.xml')).text();
-const sm = [...idx.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(site, base));
-let urls = [];
-for (const s of sm) { const x = await (await fetch(s)).text(); urls.push(...[...x.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(site, ''))); }
+const xml = await (await fetch(base + '/sitemap.xml')).text();
+let urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(site, ''));
 urls = [...new Set(urls)].sort();
 console.log('sitemap urls:', urls.length);
 const { browser, ctx } = await open(); const issues = []; const linkSet = new Set(); const titles = new Map(); const descs = new Map();
@@ -44,7 +42,7 @@ for (const u of urls) {
 }
 cur = 'links';
 for (const l of linkSet) { if (/\.(xml|svg|png|ico|webmanifest|txt)$/.test(l) || !l) continue; const r = await fetch(base + l); if (r.status !== 200) issues.push(['(links)', 'broken-link', l + ' ' + r.status]); }
-const toCheck = ['/robots.txt', '/sitemap-index.xml', '/rss.xml', '/manifest.webmanifest', '/app-store-badge.svg', '/og-default.png', '/favicon.ico', '/apple-touch-icon.png', '/nonexistent-page/'];
+const toCheck = ['/robots.txt', '/sitemap.xml', '/rss.xml', '/manifest.webmanifest', '/app-store-badge.svg', '/og-default.png', '/favicon.ico', '/apple-touch-icon.png', '/nonexistent-page/'];
 for (const t of toCheck) { const r = await fetch(base + t); console.log(t, r.status); }
 console.log('internal link targets checked:', linkSet.size);
 console.log(issues.length ? issues.map((i) => i.join(' | ')).join('\n') : 'NO ISSUES');
